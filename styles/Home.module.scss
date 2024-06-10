@@ -1,0 +1,41 @@
+/* Styles for the signup button */
+.button {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover { /* Button hover effect */
+  background-color: #3e8e41;
+}
+
+/* Styles for the role item container (optional) */
+.roleItem {
+  margin-bottom: 4rem;
+  display: flex; 
+  justify-content:baseline;
+}
+
+
+.agendaContainer{
+  max-width: 800px;
+}
+
+.roleName{
+  width: 50%;
+  margin-left: 10px;
+}
+
+.userName{
+  width: 25%;
+}
+
+.unassignedRole{
+  color: red;
+}
+
+
