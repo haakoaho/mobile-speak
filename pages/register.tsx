@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import styles from "../styles/register.module.scss";
-import { redirect } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 type FormData = {
   username: string;
@@ -13,6 +13,7 @@ type FormData = {
 };
 
 const RegisterForm = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     username: "",
     name: "",
@@ -43,7 +44,7 @@ const RegisterForm = () => {
 
       if (response.ok) {
         console.log("User registered successfully");
-        redirect("/login")
+        router.push("/login");
         
       } else {
         console.error("Failed to register user");
