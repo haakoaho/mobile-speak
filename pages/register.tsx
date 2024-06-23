@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import styles from "../styles/register.module.scss";
 import { useRouter } from "next/navigation";
+import { backendUrl } from "../enviornmnet";
 
 type FormData = {
   username: string;
@@ -34,10 +35,11 @@ const RegisterForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8081/api/users/register", {
+      const response = await fetch(`${backendUrl}/api/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "ngrok-skip-browser-warning" : "y"
         },
         body: JSON.stringify(formData),
       });

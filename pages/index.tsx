@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Roles from "./main/roles";
 import Speeches from "./main/speeches";
 import type { Agenda } from "../types";
+import { backendUrl } from "../enviornmnet";
 
 const Agenda = () => {
   const [agenda, setAgenda] = useState< Agenda | null>(null);
@@ -14,12 +15,13 @@ const Agenda = () => {
     const fetchAgenda = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8081/api/currentMeeting/agenda",
+          `${backendUrl}/api/currentMeeting/agenda`,
           {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
               "X-Requested-With": "XMLHttpRequest",
+              "ngrok-skip-browser-warning" :"y"
             },
             credentials: "include",
           }

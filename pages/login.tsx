@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import styles from "../styles/login.module.scss";
 import { useRouter } from "next/navigation";
+import { backendUrl } from "../enviornmnet";
 
 type FormData = {
   username: string;
@@ -33,12 +34,13 @@ const LoginForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:8081/api/users/userInfo",
+        `${backendUrl}/api/users/userInfo`,
         {
           method: "GET",
           headers: {
             Authorization: basicAuth,
             "Content-Type": "application/json",
+            "ngrok-skip-browser-warning" :"y"
           },
           credentials: "include"
         }
