@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.scss";
-import { useRouter } from "next/navigation";
 import Roles from "./main/roles";
 import Speeches from "./main/speeches";
 import type { Agenda } from "../types";
 import { backendUrl } from "../enviornmnet";
+import { useRouter } from "next/router";
 
 const Agenda = () => {
   const [agenda, setAgenda] = useState< Agenda | null>(null);

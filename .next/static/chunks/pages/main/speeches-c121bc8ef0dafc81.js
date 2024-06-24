@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[581],{580:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/main/speeches",function(){return u(9466)}])}},function(n){n.O(0,[466,888,774,179],function(){return n(n.s=580)}),_N_E=n.O()}]);

@@ -2,8 +2,8 @@
 
 import { useState, FormEvent } from "react";
 import styles from "../styles/register.module.scss";
-import { useRouter } from "next/navigation";
 import { backendUrl } from "../enviornmnet";
+import { useRouter } from "next/router";
 
 type FormData = {
   username: string;
