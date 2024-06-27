@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import styles from "../styles/login.module.scss";
 import { useRouter } from "next/router";
-import { useBackendUrl } from "../hooks/useBackendUrl";
+import { getBackendUrl } from "../util/getBackendUrl";
 
 type FormData = {
   username: string;
@@ -12,7 +12,7 @@ type FormData = {
 
 const LoginForm = () => {
   const router = useRouter();
-  const backendUrl = useBackendUrl();
+
 
   const [formData, setFormData] = useState<FormData>({
     username: "",
@@ -29,6 +29,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const backendUrl = await getBackendUrl();
 
     const { username, password } = formData;
     const basicAuth = `Basic ${btoa(`${username}:${password}`)}`;

@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import styles from "../styles/register.module.scss";
 import { useRouter } from "next/router";
-import { useBackendUrl } from "../hooks/useBackendUrl";
+import { getBackendUrl } from "../util/getBackendUrl";
 
 type FormData = {
   username: string;
@@ -13,7 +13,7 @@ type FormData = {
   phoneNumber: string;
 };
 
-const backendUrl = useBackendUrl();
+const backendUrl = getBackendUrl();
 
 const RegisterForm = () => {
   const router = useRouter();
