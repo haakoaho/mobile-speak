@@ -2,17 +2,18 @@
 
 import { useState, FormEvent } from "react";
 import styles from "../styles/login.module.scss";
-import { backendUrl } from "../enviornmnet";
 import { useRouter } from "next/router";
+import { useBackendUrl } from "../hooks/useBackendUrl";
 
 type FormData = {
   username: string;
   password: string;
 };
 
-
 const LoginForm = () => {
   const router = useRouter();
+  const backendUrl = useBackendUrl();
+
   const [formData, setFormData] = useState<FormData>({
     username: "",
     password: "",
@@ -33,22 +34,19 @@ const LoginForm = () => {
     const basicAuth = `Basic ${btoa(`${username}:${password}`)}`;
 
     try {
-      const response = await fetch(
-        `${backendUrl}/api/users/userInfo`,
-        {
-          method: "GET",
-          headers: {
-            Authorization: basicAuth,
-            "Content-Type": "application/json",
-            "ngrok-skip-browser-warning" :"y"
-          },
-          credentials: "include"
-        }
-      );
+      const response = await fetch(`${backendUrl}/api/users/userInfo`, {
+        method: "GET",
+        headers: {
+          Authorization: basicAuth,
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "y",
+        },
+        credentials: "include",
+      });
 
       if (response.ok) {
         const data = await response.json();
-        router.push("/")
+        router.push("/");
         // Handle the response data here, e.g., store session token
       } else {
         console.error("Failed to fetch agenda");
@@ -89,7 +87,9 @@ const LoginForm = () => {
           Login
         </button>
 
-        <a href="/register" className={styles.label}>New user? Click below register</a>
+        <a href="/register" className={styles.label}>
+          New user? Click below register
+        </a>
       </form>
     </div>
   );

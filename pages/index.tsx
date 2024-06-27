@@ -3,19 +3,21 @@ import styles from "../styles/Home.module.scss";
 import Roles from "./main/roles";
 import Speeches from "./main/speeches";
 import type { Agenda } from "../types";
-import { backendUrl } from "../enviornmnet";
 import { useRouter } from "next/router";
+import { getBackendUrl, useBackendUrl } from "../hooks/useBackendUrl";
 
 const Agenda = () => {
   const [agenda, setAgenda] = useState< Agenda | null>(null);
+  const backendUrl = useBackendUrl();
   const router = useRouter();
 
   useEffect(() => {
-
+    
     const fetchAgenda = async () => {
+    const backendUrlInUseEffect = await getBackendUrl();
       try {
         const response = await fetch(
-          `${backendUrl}/api/currentMeeting/agenda`,
+          `${backendUrlInUseEffect}/api/currentMeeting/agenda`,
           {
             method: "GET",
             headers: {
@@ -32,7 +34,9 @@ const Agenda = () => {
           setAgenda(data);
         } else if (response.status === 401) {
           router.push("/login");
-        } else {
+        }
+
+        else {
           console.error("Failed to fetch agenda");
         }
       } catch (error) {
@@ -45,9 +49,9 @@ const Agenda = () => {
   return (
     <div className={styles.agendaContainer}>
       <h1 className={styles.agendaHeader}>Current Meeting Agenda</h1>
-      {agenda ? (
+      {backendUrl ? (  // Check if backendUrl is populated before using it
         <>
-          <Roles agenda={agenda} setAgenda = {setAgenda}/>
+          <Roles agenda={agenda} setAgenda={setAgenda} />
           <Speeches agenda={agenda} />
         </>
       ) : (

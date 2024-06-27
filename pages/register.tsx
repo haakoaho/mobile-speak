@@ -2,8 +2,8 @@
 
 import { useState, FormEvent } from "react";
 import styles from "../styles/register.module.scss";
-import { backendUrl } from "../enviornmnet";
 import { useRouter } from "next/router";
+import { useBackendUrl } from "../hooks/useBackendUrl";
 
 type FormData = {
   username: string;
@@ -12,6 +12,8 @@ type FormData = {
   email: string;
   phoneNumber: string;
 };
+
+const backendUrl = useBackendUrl();
 
 const RegisterForm = () => {
   const router = useRouter();
