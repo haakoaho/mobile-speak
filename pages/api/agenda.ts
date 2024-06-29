@@ -1,23 +1,20 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getDeployments } from "../../util/getBackendUrl";
 
 import { CustomSession } from "./auth/typing";
 import { getSession } from "next-auth/react";
+import { backendUrl } from "../../util/getBackendUrl";
 
 export default async function GET(req: NextApiRequest, res: NextApiResponse) {
-  const session = await getSession() as CustomSession;
-
-  console.log(session);
+  const session = await getSession({req}) as CustomSession;
 
   if (!session) {
     res.status(401).json({ message: "Unauthorized" });
     return;
   }
 
-  const url = (await getDeployments()).backendUrl;
 
   try {
-    const response = await fetch(`${url}/api/currentMeeting/agenda`, {
+    const response = await fetch(`${backendUrl}/api/currentMeeting/agenda`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -1,7 +1,8 @@
 import NextAuth, { Session } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { getDeployments } from '../../../util/getBackendUrl';
 import { CustomSession, CustomToken, CustomUser } from './typing';
+import { backendUrl } from '../../../util/getBackendUrl';
+
 
 export default NextAuth({
   providers: [
@@ -12,10 +13,9 @@ export default NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       authorize: async (credentials) => {
-        const url = (await getDeployments()).backendUrl;
         const basicAuth = `Basic ${Buffer.from(`${credentials.username}:${credentials.password}`).toString('base64')}`;
 
-        const response = await fetch(`${url}/api/users/userInfo`, {
+        const response = await fetch(`${backendUrl}/api/users/userInfo`, {
           method: 'GET',
           headers: {
             Authorization: basicAuth,
@@ -24,7 +24,7 @@ export default NextAuth({
           },
           credentials: 'include',
         });
-
+        console.log(response);
         if (response.ok) {
           const user: any = await response.json();
           const setCookieHeader = response.headers.get('set-cookie');
