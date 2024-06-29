@@ -1,11 +1,10 @@
 import { Deployments } from "../types";
 
-let backendUrl : string | null;
 
-export async function getBackendUrl() {
-  if(backendUrl) return backendUrl;
+let deployments : Deployments | null;
+
+export async function getDeployments() : Promise<Deployments> {
+  if(deployments) return deployments;
   const response = await fetch("https://haakoaho.github.io/speak-fun/deployments.json");
-  const data : Deployments = await response.json();
-  backendUrl = data.backendUrl;
-  return data.backendUrl;
+  return await response.json();
 }

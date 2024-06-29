@@ -1,6 +1,6 @@
 import NextAuth, { Session } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { getBackendUrl } from '../../../util/getBackendUrl';
+import { getDeployments } from '../../../util/getBackendUrl';
 import { CustomSession, CustomToken, CustomUser } from './typing';
 
 export default NextAuth({
@@ -12,7 +12,7 @@ export default NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       authorize: async (credentials) => {
-        const url = await getBackendUrl();
+        const url = (await getDeployments()).backendUrl;
         const basicAuth = `Basic ${Buffer.from(`${credentials.username}:${credentials.password}`).toString('base64')}`;
 
         const response = await fetch(`${url}/api/users/userInfo`, {
@@ -40,7 +40,7 @@ export default NextAuth({
     }),
   ],
   session: {
-    strategy: 'jwt',
+    strategy: 'jwt'
   },
   secret: "abc",
   callbacks: {

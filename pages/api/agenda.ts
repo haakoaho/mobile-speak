@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getBackendUrl } from "../../util/getBackendUrl";
-import { getSession } from "next-auth/react";
+import { getDeployments } from "../../util/getBackendUrl";
+
 import { CustomSession } from "./auth/typing";
+import { getSession } from "next-auth/react";
 
 export default async function GET(req: NextApiRequest, res: NextApiResponse) {
   const session = await getSession({ req }) as CustomSession;
@@ -13,7 +14,7 @@ export default async function GET(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  const url = await getBackendUrl();
+  const url = (await getDeployments()).backendUrl;
 
   try {
     const response = await fetch(`${url}/api/currentMeeting/agenda`, {
