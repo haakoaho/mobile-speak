@@ -11,7 +11,7 @@ export interface CustomToken extends JWT {
 
 export interface CustomUser extends User {
   jsessionId: string;
-  id?: string
+  id: string
   name?: string | null
   email?: string | null
   image?: string | null
