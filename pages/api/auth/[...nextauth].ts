@@ -56,7 +56,7 @@ export default NextAuth({
     },
     async session({ session, token }) {
       const customToken = token as CustomToken
-      const customSession = session as CustomSession;
+      const customSession = session as unknown as CustomSession;
       customSession.user.name = customToken.name;
       customSession.user.email = customToken.email;
       customSession.user.jsessionId = customToken.jsessionId;
