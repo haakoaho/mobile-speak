@@ -1,9 +1,7 @@
-"use client";
-
 import { useState, FormEvent } from "react";
 import styles from "../styles/login.module.scss";
 import { useRouter } from "next/router";
-import { getBackendUrl } from "../util/getBackendUrl";
+import { signIn } from "next-auth/react";
 
 type FormData = {
   username: string;
@@ -12,8 +10,6 @@ type FormData = {
 
 const LoginForm = () => {
   const router = useRouter();
-
-
   const [formData, setFormData] = useState<FormData>({
     username: "",
     password: "",
@@ -29,32 +25,25 @@ const LoginForm = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const backendUrl = await getBackendUrl();
 
     const { username, password } = formData;
-    const basicAuth = `Basic ${btoa(`${username}:${password}`)}`;
 
     try {
-      const response = await fetch(`${backendUrl}/api/users/userInfo`, {
-        method: "GET",
-        headers: {
-          Authorization: basicAuth,
-          "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "y",
-        },
-        credentials: "include",
+      const result = await signIn("credentials", {
+        redirect: false,
+        username,
+        password,
       });
 
-      if (response.ok) {
-        const data = await response.json();
+      if (result?.error) {
+        console.error("Failed to sign in:", result.error);
+        // Handle error scenario
+      } else {
         router.push("/");
         // Handle the response data here, e.g., store session token
-      } else {
-        console.error("Failed to fetch agenda");
-        // Handle error scenario
       }
     } catch (error) {
-      console.error("Failed to fetch agenda:", error);
+      console.error("Failed to sign in:", error);
       // Handle network or other errors
     }
   };

@@ -12,3 +12,8 @@ export type Agenda = {
   theme: string;
   speakers: number;
 };
+
+export type Deployments = {
+  backendUrl: string;
+  frontendUrl: string;
+};

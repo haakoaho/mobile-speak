@@ -4,7 +4,6 @@ import Roles from "./main/roles";
 import Speeches from "./main/speeches";
 import type { Agenda } from "../types";
 import { useRouter } from "next/router";
-import { getBackendUrl } from "../util/getBackendUrl";
 
 const Agenda = () => {
   const [agenda, setAgenda] = useState< Agenda | null>(null);
@@ -13,26 +12,14 @@ const Agenda = () => {
   useEffect(() => {
 
     const fetchAgenda = async () => {
-      const awaitedBackendUrl = await getBackendUrl();
       try {
-        const response = await fetch(
-          `${awaitedBackendUrl}/api/currentMeeting/agenda`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              "X-Requested-With": "XMLHttpRequest",
-              "ngrok-skip-browser-warning" :"y"
-            },
-            credentials: "include",
-          }
-        );
+        const response = await fetch("api/agenda");
   
         if (response.ok) {
           const data: Agenda = await response.json();
           setAgenda(data);
         } else if (response.status === 401) {
-          router.push("/login");
+          router.push("/signin");
         }
 
         else {

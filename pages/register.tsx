@@ -13,8 +13,6 @@ type FormData = {
   phoneNumber: string;
 };
 
-const backendUrl = getBackendUrl();
-
 const RegisterForm = () => {
   const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
@@ -35,7 +33,7 @@ const RegisterForm = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    const backendUrl = await getBackendUrl();
     try {
       const response = await fetch(`${backendUrl}/api/users/register`, {
         method: "POST",
