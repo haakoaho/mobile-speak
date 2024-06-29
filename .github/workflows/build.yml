@@ -1,4 +1,4 @@
-name: Build and Deploy
+ame: Build and Deploy
 
 on:
   push:
@@ -28,6 +28,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: next-build
-          path: |
-            .next
-            node_modules
+          path: .next

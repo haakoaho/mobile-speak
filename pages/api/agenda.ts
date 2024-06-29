@@ -5,7 +5,7 @@ import { CustomSession } from "./auth/typing";
 import { getSession } from "next-auth/react";
 
 export default async function GET(req: NextApiRequest, res: NextApiResponse) {
-  const session = await getSession({ req }) as CustomSession;
+  const session = await getSession() as CustomSession;
 
   console.log(session);
 
