@@ -1,42 +1,86 @@
-
 .registerForm {
-    margin: 2rem auto;
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%; /* Adjust width as needed */
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%; /* Adjust width as needed */
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+
+  input {
+    width: 90%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1.5rem;
   }
-  
-  .formGroup {
-    margin-bottom: 1rem;
-  
-    input {
-      width: 90%;
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      font-size: 1.5rem;
-    }
+}
+
+.formGroup label {
+  display: block; /* Display labels on separate lines */
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem; /* Adjust as needed */
+  font-weight: bold;
+}
+
+.submitButton {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.submitButton:hover { /* Button hover effect */
+  background-color: #3e8e41;
+}
+
+.formCheckbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  input[type="checkbox"] {
+    margin-right: 0.5rem;
   }
-  
-  .formGroup label {
-    display: block; /* Display labels on separate lines */
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem; /* Adjust as needed */
-    font-weight: bold;
+
+  label {
+    font-size: 1.2rem; /* Adjust as needed */
+    font-weight: normal;
+    margin-bottom: 0; /* Remove bottom margin for inline label */
   }
-  
-  .submitButton {
-    background-color: #4CAF50; /* Green color */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+
+  a {
+    color: #007BFF;
+    text-decoration: none;
+    margin-left: 0.25rem; /* Adjust spacing as needed */
   }
-  
-  .submitButton:hover { /* Button hover effect */
-    background-color: #3e8e41;
+
+  a:hover {
+    text-decoration: underline;
   }
-  
+}
+
+.radioGroup {
+  margin-bottom: 1rem;
+
+  label {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.2rem; /* Adjust as needed */
+  }
+
+  input[type="radio"] {
+    margin-right: 0.5rem;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}

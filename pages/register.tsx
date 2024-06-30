@@ -6,39 +6,62 @@ import { useRouter } from "next/router";
 import { backendUrl } from "../util/getBackendUrl";
 
 type FormData = {
-  username: string;
   name: string;
   password: string;
+  password2: string;
   email: string;
   phoneNumber: string;
+  acceptedTerms: boolean;
+  gdprConsent: string;
 };
 
 const RegisterForm = () => {
   const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
-    username: "",
     name: "",
     password: "",
+    password2: "",
     email: "",
     phoneNumber: "",
+    acceptedTerms: false,
+    gdprConsent: "", // Initialize as empty to ensure user makes a choice
   });
 
+  const [error, setError] = useState<string>("");
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: type === "checkbox" ? checked : value,
     });
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (formData.password !== formData.password2) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    if (!formData.acceptedTerms) {
+      setError("You must accept the terms and conditions");
+      return;
+    }
+
+    if (!formData.gdprConsent) {
+      setError("You must provide consent for GDPR compliance");
+      return;
+    }
+
+    setError("");
     try {
       const response = await fetch(`${backendUrl}/api/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "ngrok-skip-browser-warning" : "y"
+          "ngrok-skip-browser-warning": "y",
         },
         body: JSON.stringify(formData),
       });
@@ -46,32 +69,19 @@ const RegisterForm = () => {
       if (response.ok) {
         console.log("User registered successfully");
         router.push("/signin");
-        
       } else {
         console.error("Failed to register user");
-        // Handle error scenario
+        setError("Failed to register user");
       }
     } catch (error) {
       console.error("Failed to register user:", error);
-      // Handle network or other errors
+      setError("Failed to register user");
     }
   };
 
   return (
     <div className={styles.registerForm}>
       <form onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-            placeholder="Enter Username"
-          />
-        </div>
         <div className={styles.formGroup}>
           <label htmlFor="name">Name:</label>
           <input
@@ -82,18 +92,6 @@ const RegisterForm = () => {
             onChange={handleChange}
             required
             placeholder="Enter Your Full Name"
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            placeholder="Enter a Strong Password"
           />
         </div>
         <div className={styles.formGroup}>
@@ -109,7 +107,31 @@ const RegisterForm = () => {
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="phoneNumber">Phone Number (Optional):</label>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+            placeholder="Enter a Strong Password"
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="password2">Confirm Password:</label>
+          <input
+            type="password"
+            name="password2"
+            id="password2"
+            value={formData.password2}
+            onChange={handleChange}
+            required
+            placeholder="Type the password again"
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="phoneNumber">Phone Number:</label>
           <input
             type="text"
             name="phoneNumber"
@@ -119,6 +141,46 @@ const RegisterForm = () => {
             placeholder="Enter Phone Number"
           />
         </div>
+        <div className={styles.formCheckbox}>
+          <input
+            type="checkbox"
+            name="acceptedTerms"
+            checked={formData.acceptedTerms}
+            onChange={handleChange}
+            required
+          />
+          <label>
+            I accept the{" "}
+            <a href="/terms" target="_blank">
+              terms and conditions
+            </a>
+          </label>
+        </div>
+        <div className={styles.radioGroup}>
+          <label>
+            <input
+              type="radio"
+              name="gdprConsent"
+              value="yes"
+              checked={formData.gdprConsent === "yes"}
+              onChange={handleChange}
+              required
+            />
+            I consent to Oslo Toastmasters Club using pictures of my speeches in social media.
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="gdprConsent"
+              value="no"
+              checked={formData.gdprConsent === "no"}
+              onChange={handleChange}
+              required
+            />
+            I do not consent to Oslo Toastmasters Club using pictures of my speeches in social media.
+          </label>
+        </div>
+        {error && <div className={styles.error}>{error}</div>}
         <button type="submit" className={styles.submitButton}>
           Register
         </button>
