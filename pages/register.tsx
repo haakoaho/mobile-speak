@@ -45,7 +45,7 @@ const RegisterForm = () => {
 
       if (response.ok) {
         console.log("User registered successfully");
-        router.push("/login");
+        router.push("/signin");
         
       } else {
         console.error("Failed to register user");

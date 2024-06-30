@@ -1,10 +1,10 @@
-import NextAuth from 'next-auth';
+// pages/api/auth/authOptions.ts
+import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { CustomSession, CustomToken, CustomUser } from './typing';
 import { backendUrl } from '../../../util/getBackendUrl';
 
-
-export default NextAuth({
+export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -13,7 +13,7 @@ export default NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       authorize: async (credentials) => {
-        const basicAuth = `Basic ${Buffer.from(`${credentials.username}:${credentials.password}`).toString('base64')}`;
+        const basicAuth = `Basic ${Buffer.from(`${credentials?.username}:${credentials?.password}`).toString('base64')}`;
 
         const response = await fetch(`${backendUrl}/api/users/userInfo`, {
           method: 'GET',
@@ -24,9 +24,9 @@ export default NextAuth({
           },
           credentials: 'include',
         });
-        console.log(response);
+
         if (response.ok) {
-          const user: any = await response.json();
+          const user: CustomUser = await response.json();
           const setCookieHeader = response.headers.get('set-cookie');
           const jsessionId = setCookieHeader?.match(/JSESSIONID=([^;]+);/)?.[1];
           if (jsessionId) {
@@ -40,13 +40,13 @@ export default NextAuth({
     }),
   ],
   session: {
-    strategy: 'jwt'
+    strategy: 'jwt',
   },
-  secret: "abc",
+  secret: "abc", // Replace with a strong secret for production
   callbacks: {
     async jwt({ token, user }) {
       const customUser = user as CustomUser;
-      if (user) {
+      if (customUser) {
         token.id = customUser.id;
         token.name = customUser.name;
         token.email = customUser.email;
@@ -55,16 +55,15 @@ export default NextAuth({
       return token;
     },
     async session({ session, token }) {
-      const customToken = token as CustomToken
-      const customSession = session as unknown as CustomSession;
+      const customToken = token as CustomToken;
+      const customSession = session as CustomSession;
       customSession.user.name = customToken.name;
       customSession.user.email = customToken.email;
       customSession.user.jsessionId = customToken.jsessionId;
-      return session;
+      return customSession;
     },
   },
   pages: {
     signIn: '/signin',
   },
-});
-
+};

@@ -14,25 +14,17 @@ const Roles = ({
 
   const handleTakeRole = async (roleId: number) => {
     try {
-      const response = await fetch(
-        `http://localhost:8081/api/currentMeeting/reserveRole/${roleId}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Requested-With": "XMLHttpRequest",
-          },
-          credentials: "include",
-        }
-      );
+      const response = await fetch("api/roles", {
+        method: "PATCH",
+        body: JSON.stringify({ roleId: roleId })
+      });
 
       if (response.ok) {
         console.log(`Role ${roleId} reserved successfully`);
-        // Optionally, refresh the agenda to show updated roles
-        const updatedAgenda = await response.json();
+        const updatedAgenda : Agenda = await response.json();
         setAgenda(updatedAgenda);
       } else if (response.status == 401) {
-        router.push("/login");
+        router.push("/signin");
       } else {
         console.error(`Failed to reserve role ${roleId}`);
       }

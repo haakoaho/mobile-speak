@@ -1,17 +1,16 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-
-import { CustomSession } from "./auth/typing";
-import { getSession } from "next-auth/react";
+import { NextApiRequest, NextApiResponse } from "next";
+import { getServerSession } from "next-auth";
 import { backendUrl } from "../../util/getBackendUrl";
+import { CustomSession } from "./auth/typing";
+import { authOptions } from "./auth/authOptions";
 
 export default async function GET(req: NextApiRequest, res: NextApiResponse) {
-  const session = await getSession({req}) as CustomSession;
+  const session = await getServerSession(req, res, authOptions) as CustomSession;
 
   if (!session) {
     res.status(401).json({ message: "Unauthorized" });
     return;
   }
-
 
   try {
     const response = await fetch(`${backendUrl}/api/currentMeeting/agenda`, {
@@ -19,7 +18,6 @@ export default async function GET(req: NextApiRequest, res: NextApiResponse) {
       headers: {
         "Content-Type": "application/json",
         "X-Requested-With": "XMLHttpRequest",
-        "ngrok-skip-browser-warning": "y",
         "Cookie": `JSESSIONID=${session.user.jsessionId}`
       },
       credentials: "include",
