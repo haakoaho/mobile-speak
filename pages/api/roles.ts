@@ -1,16 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { CustomSession } from "./auth/typing";
-import { backendUrl } from "../../util/getBackendUrl";
 import { Agenda } from "../../types";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./auth/authOptions";
+import { getBackendUrl } from "../../util/getBackendUrl";
 
 export default async function PATCH(req: NextApiRequest, res: NextApiResponse) {
     const session = await getServerSession(req, res, authOptions) as CustomSession;
     const body = JSON.parse(req.body);
     const roleId : number = body.roleId;
 
-    console.log(body);
+    const backendUrl = await getBackendUrl();
     if (!session) {
       res.status(401).json({ message: "Unauthorized" });
       return;
