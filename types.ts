@@ -13,7 +13,6 @@ export type Agenda = {
   speakers: number;
 };
 
-export type Deployments = {
-  backendUrl: string;
-  frontendUrl: string;
+export type Deployment = {
+  url: string
 };
