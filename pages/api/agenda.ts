@@ -1,13 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { backendUrl } from "../../util/getBackendUrl";
+import { getBackendUrl } from "../../util/getBackendUrl";
 import { CustomSession } from "./auth/typing";
 import { authOptions } from "./auth/authOptions";
 
 export default async function GET(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession(req, res, authOptions) as CustomSession;
+  const backendUrl = await getBackendUrl();
 
   if (!session) {
+    console.log("ikke snilt")
     res.status(401).json({ message: "Unauthorized" });
     return;
   }

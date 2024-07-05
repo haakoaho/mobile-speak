@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { CustomSession, CustomToken, CustomUser } from './typing';
-import { backendUrl } from '../../../util/getBackendUrl';
+import { getBackendUrl } from '../../../util/getBackendUrl';
 
 
 export default NextAuth({
@@ -14,17 +14,15 @@ export default NextAuth({
       },
       authorize: async (credentials) => {
         const basicAuth = `Basic ${Buffer.from(`${credentials.username}:${credentials.password}`).toString('base64')}`;
-
+        const backendUrl = await getBackendUrl();
         const response = await fetch(`${backendUrl}/api/users/userInfo`, {
           method: 'GET',
           headers: {
             Authorization: basicAuth,
             'Content-Type': 'application/json',
-            'ngrok-skip-browser-warning': 'y',
           },
           credentials: 'include',
         });
-        console.log(response);
         if (response.ok) {
           const user: any = await response.json();
           const setCookieHeader = response.headers.get('set-cookie');

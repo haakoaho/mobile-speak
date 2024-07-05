@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import styles from "../styles/register.module.scss";
 import { useRouter } from "next/router";
-import { backendUrl } from "../util/getBackendUrl";
+import { getBackendUrl } from "../util/getBackendUrl";
 
 type FormData = {
   name: string;
@@ -57,6 +57,7 @@ const RegisterForm = () => {
 
     setError("");
     try {
+      const backendUrl = await getBackendUrl();
       const response = await fetch(`${backendUrl}/api/users/register`, {
         method: "POST",
         headers: {
