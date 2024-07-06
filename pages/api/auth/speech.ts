@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./auth/authOptions";
-import { CustomSession } from "./auth/typing";
-import { getBackendUrl } from "../../util/getBackendUrl";
-import { Agenda } from "../../types";
+import { authOptions } from "./authOptions";
+import { CustomSession } from "./typing";
+import { getBackendUrl } from "../../../util/getBackendUrl";
+import { Agenda } from "../../../types";
 
 export default async function PATCH(req: NextApiRequest, res: NextApiResponse) {
   const session = (await getServerSession(

@@ -1,9 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { PathwaySpeech, pathways } from "../../pathways";
 import { Agenda, User } from "../../types";
 import styles from "../../styles/Home.module.scss";
 
-const Speeches = ({ agenda }: { agenda: Agenda }) => {
+const Speeches = ({
+  agenda,
+  setAgenda,
+}: {
+  agenda: Agenda;
+  setAgenda: Dispatch<SetStateAction<Agenda>>;
+}) => {
   const [selectedPathway, setSelectedPathway] = useState<number | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [selectedSpeech, setSelectedSpeech] = useState<PathwaySpeech | null>(
@@ -27,7 +33,7 @@ const Speeches = ({ agenda }: { agenda: Agenda }) => {
       }
     };
     fetchUser();
-  }, []); // Run this effect only once on component mount
+  }, []);
 
   const handleSpeechSelection = (
     pathwayIndex: number,
@@ -43,7 +49,7 @@ const Speeches = ({ agenda }: { agenda: Agenda }) => {
   const handleEvaluate = async (speechId: number) => {
     try {
       const response = await fetch("/api/speech/evaluate", {
-        method: "POST",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
@@ -56,7 +62,9 @@ const Speeches = ({ agenda }: { agenda: Agenda }) => {
         throw new Error("Failed to evaluate the speech");
       }
 
-      setMessage("Successfully evaluated the speech");
+      setMessage("Scheduled to evaluate");
+      const data : Agenda = await response.json();
+      setAgenda(data);
     } catch (error) {
       setMessage("Error evaluating the speech");
     }
@@ -131,18 +139,14 @@ const Speeches = ({ agenda }: { agenda: Agenda }) => {
           onSubmit={async (e) => {
             e.preventDefault();
             try {
-              const response = await fetch("/api/speech", {
+              const response = await fetch("/api/speech/speech", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                   title,
-                  pathways: JSON.stringify({
-                    pathway: pathways[selectedPathway!].title,
-                    level: selectedLevel,
-                    speech: selectedSpeech,
-                  }),
+                  pathway: pathways[selectedPathway].title + "." + selectedLevel + "." + selectedSpeech.speechNumber,
                   meetingOrder: 0,
                 }),
               });
@@ -152,6 +156,8 @@ const Speeches = ({ agenda }: { agenda: Agenda }) => {
               }
 
               setMessage("Successfully reserved the speech");
+              const data : Agenda = await response.json();
+              setAgenda(data);
             } catch (error) {
               setMessage("Error reserving the speech");
             }

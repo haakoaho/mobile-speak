@@ -18,7 +18,7 @@ export default async function PATCH(req: NextApiRequest, res: NextApiResponse) {
   
   
     try {
-      const response = await fetch(`${backendUrl}/api/currentMeeting/reserveRole/${roleId}/0`, {
+      const response = await fetch(`${backendUrl}/api/currentMeeting/reserveRole/0/${roleId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
