@@ -35,7 +35,7 @@ const Agenda = () => {
       {agenda ? (
         <>
             <Roles agenda={agenda} setAgenda={setAgenda} />
-            <Speeches agenda={agenda} />
+            <Speeches agenda={agenda} setAgenda={setAgenda} />
         </>
       ) : (
         <p>Loading agenda...</p>
