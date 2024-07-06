@@ -15,7 +15,7 @@ export default async function GET(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    const response = await fetch(`${backendUrl}/api/currentMeeting/agenda`, {
+    const response = await fetch(`${backendUrl}/api/currentMeeting/agenda/0`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

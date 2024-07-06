@@ -6,23 +6,20 @@ import type { Agenda } from "../types";
 import { useRouter } from "next/router";
 
 const Agenda = () => {
-  const [agenda, setAgenda] = useState< Agenda | null>(null);
+  const [agenda, setAgenda] = useState<Agenda | null>(null);
   const router = useRouter();
 
   useEffect(() => {
-
     const fetchAgenda = async () => {
       try {
         const response = await fetch("api/agenda");
-  
+
         if (response.ok) {
           const data: Agenda = await response.json();
           setAgenda(data);
         } else if (response.status === 401) {
           router.push("/signin");
-        }
-
-        else {
+        } else {
           console.error("Failed to fetch agenda");
         }
       } catch (error) {
@@ -35,10 +32,10 @@ const Agenda = () => {
   return (
     <div className={styles.agendaContainer}>
       <h1 className={styles.agendaHeader}>Current Meeting Agenda</h1>
-      {agenda ? ( 
+      {agenda ? (
         <>
-          <Roles agenda={agenda} setAgenda={setAgenda} />
-          <Speeches agenda={agenda} />
+            <Roles agenda={agenda} setAgenda={setAgenda} />
+            <Speeches agenda={agenda} />
         </>
       ) : (
         <p>Loading agenda...</p>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { PathwaySpeech, pathways } from "../../pathways";
-import { Agenda } from "../../types";
+import { Agenda, User } from "../../types";
 import styles from "../../styles/Home.module.scss";
 
 const Speeches = ({ agenda }: { agenda: Agenda }) => {
@@ -9,80 +9,181 @@ const Speeches = ({ agenda }: { agenda: Agenda }) => {
   const [selectedSpeech, setSelectedSpeech] = useState<PathwaySpeech | null>(
     null
   );
+  const [title, setTitle] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch("/api/user");
+        if (!response.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+        const data: User = await response.json();
+        setUser(data);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+    fetchUser();
+  }, []); // Run this effect only once on component mount
 
   const handleSpeechSelection = (
-    pathwayIndex:number,
+    pathwayIndex: number,
     level: string,
     speechNumber: number
   ) => {
-    if (agenda) {
-        const selectedLevelSpeech =
-          pathways[pathwayIndex][level][speechNumber - 1];
-        setSelectedPathway(pathwayIndex);
-        setSelectedLevel(level);
-        setSelectedSpeech(selectedLevelSpeech);
+    const selectedLevelSpeech = pathways[pathwayIndex][level][speechNumber - 1];
+    setSelectedPathway(pathwayIndex);
+    setSelectedLevel(level);
+    setSelectedSpeech(selectedLevelSpeech);
+  };
+
+  const handleEvaluate = async (speechId: number) => {
+    try {
+      const response = await fetch("/api/speech/evaluate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          speechId,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to evaluate the speech");
+      }
+
+      setMessage("Successfully evaluated the speech");
+    } catch (error) {
+      setMessage("Error evaluating the speech");
     }
   };
 
+  if (!agenda) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className={styles.dropdowns}>
-      <select
-        value={selectedPathway || ""}
-        onChange={(e) => setSelectedPathway(Number(e.target.value))}
-      >
-        <option value="">Select Pathway</option>
-        {agenda &&
-          pathways.map((pathway, index) => (
-            <option key={pathway.title} value={index + 1}>
+    <div>
+      <div className={styles.dropdowns}>
+        <select
+          value={selectedPathway || ""}
+          onChange={(e) => setSelectedPathway(Number(e.target.value))}
+        >
+          <option value="">Select Pathway</option>
+          {pathways.map((pathway, index) => (
+            <option key={pathway.title} value={index}>
               {pathway.title}
             </option>
           ))}
-      </select>
-      {selectedPathway && (
-        <select
-          value={selectedLevel || ""}
-          onChange={(e) => setSelectedLevel(e.target.value)}
-        >
-          <option value="">Select Level</option>
-          <option value="level1">1</option>
-          <option value="level2">2</option>
-          <option value="level3">3</option>
-          <option value="level4">4</option>
-          <option value="level5">5</option>
         </select>
-      )}
-      {selectedLevel && (
-        <select
-          onChange={(e) => {
-            const speechNumber = parseInt(e.target.value);
-            handleSpeechSelection(
-              selectedPathway!,
-              selectedLevel!,
-              speechNumber
-            );
+        {selectedPathway !== null && (
+          <select
+            value={selectedLevel || ""}
+            onChange={(e) => setSelectedLevel(e.target.value)}
+          >
+            <option value="">Select Level</option>
+            <option value="level1">1</option>
+            <option value="level2">2</option>
+            <option value="level3">3</option>
+            <option value="level4">4</option>
+            <option value="level5">5</option>
+          </select>
+        )}
+        {selectedLevel && (
+          <select
+            onChange={(e) => {
+              const speechNumber = parseInt(e.target.value);
+              handleSpeechSelection(
+                selectedPathway!,
+                selectedLevel,
+                speechNumber
+              );
+            }}
+          >
+            <option value="">Select Speech</option>
+            {selectedPathway !== null &&
+              selectedLevel &&
+              pathways[selectedPathway][selectedLevel].map((speech, index) => (
+                <option key={index} value={index + 1}>
+                  {speech.title}
+                </option>
+              ))}
+          </select>
+        )}
+        {selectedSpeech && (
+          <div className={styles.selectedSpeech}>
+            <h2>{selectedSpeech.title}</h2>
+            <p>{selectedSpeech.overview}</p>
+            <p>Objective: {selectedSpeech.objective}</p>
+            <p>Green Card: {selectedSpeech.greenCard}</p>
+            <p>Yellow Card: {selectedSpeech.yellowCard}</p>
+            <p>Red Card: {selectedSpeech.redCard}</p>
+          </div>
+        )}
+      </div>
+
+      {selectedPathway !== null && selectedLevel && selectedSpeech && (
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            try {
+              const response = await fetch("/api/speech", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  title,
+                  pathways: JSON.stringify({
+                    pathway: pathways[selectedPathway!].title,
+                    level: selectedLevel,
+                    speech: selectedSpeech,
+                  }),
+                  meetingOrder: 0,
+                }),
+              });
+
+              if (!response.ok) {
+                throw new Error("Failed to reserve the speech");
+              }
+
+              setMessage("Successfully reserved the speech");
+            } catch (error) {
+              setMessage("Error reserving the speech");
+            }
           }}
         >
-          <option value="">Select Speech</option>
-          {selectedPathway &&
-            selectedLevel &&
-            pathways[selectedPathway][selectedLevel].map((speech, index) => (
-              <option key={index + 1} value={index + 1}>
-                {speech.title}
-              </option>
-            ))}
-        </select>
-      )}
-      {selectedSpeech && ( // Display selected speech details
-        <div className={styles.selectedSpeech}>
-          <h2>{selectedSpeech.title}</h2>
-          <p>{selectedSpeech.overview}</p>
-          <p>Objective: {selectedSpeech.objective}</p>
-          <p>Green Card: {selectedSpeech.greenCard}</p>
-          <p>Yellow Card: {selectedSpeech.yellowCard}</p>
-          <p>Red Card: {selectedSpeech.redCard}</p>
-        </div>
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+          <button type="submit">Reserve Speech</button>
+        </form>
       )}
 
+      <div className={styles.speeches}>
+        {agenda.speeches.map((speech) => (
+          <div key={speech.id} className={styles.speech}>
+            <h3>{speech.title}</h3>
+            <p>Pathway: {speech.pathway}</p>
+            <p>Speaker: {speech.speakerName}</p>
+            <p>Evaluator: {speech.evaluatorName || "Not assigned"}</p>
+            {user && user.id !== speech.speakerId && !speech.evaluatorId && (
+              <button onClick={() => handleEvaluate(speech.id)}>
+                Evaluate
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+      {message && <p>{message}</p>}
     </div>
   );
 };
