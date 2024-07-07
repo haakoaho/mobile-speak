@@ -9,6 +9,7 @@ export default async function PATCH(req: NextApiRequest, res: NextApiResponse) {
     const session = await getServerSession(req, res, authOptions) as CustomSession;
     const body = JSON.parse(req.body);
     const roleId : number = body.roleId;
+    const meeting : string = body.meeting;
 
     const backendUrl = await getBackendUrl();
     if (!session) {
@@ -18,7 +19,7 @@ export default async function PATCH(req: NextApiRequest, res: NextApiResponse) {
   
   
     try {
-      const response = await fetch(`${backendUrl}/api/currentMeeting/reserveRole/0/${roleId}`, {
+      const response = await fetch(`${backendUrl}/api/currentMeeting/reserveRole/${meeting}/${roleId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

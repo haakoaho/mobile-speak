@@ -2,6 +2,7 @@ import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { PathwaySpeech, pathways } from "../../pathways";
 import { Agenda, User } from "../../types";
 import styles from "../../styles/Home.module.scss";
+import router from "next/router";
 
 const Speeches = ({
   agenda,
@@ -10,6 +11,7 @@ const Speeches = ({
   agenda: Agenda;
   setAgenda: Dispatch<SetStateAction<Agenda>>;
 }) => {
+  const { meeting = "0" } = router.query;
   const [selectedPathway, setSelectedPathway] = useState<number | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [selectedSpeech, setSelectedSpeech] = useState<PathwaySpeech | null>(
@@ -54,7 +56,7 @@ const Speeches = ({
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          speechId,
+          speechId, meeting
         }),
       });
 
@@ -147,7 +149,7 @@ const Speeches = ({
                 body: JSON.stringify({
                   title,
                   pathway: pathways[selectedPathway].title + "." + selectedLevel + "." + selectedSpeech.speechNumber,
-                  meetingOrder: 0,
+                  meetingOrder: meeting
                 }),
               });
 

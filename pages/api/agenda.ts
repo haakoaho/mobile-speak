@@ -7,15 +7,15 @@ import { authOptions } from "./auth/authOptions";
 export default async function GET(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession(req, res, authOptions) as CustomSession;
   const backendUrl = await getBackendUrl();
+  const meeting = req.query.meeting as string;
 
   if (!session) {
-    console.log("ikke snilt")
     res.status(401).json({ message: "Unauthorized" });
     return;
   }
 
   try {
-    const response = await fetch(`${backendUrl}/api/currentMeeting/agenda/0`, {
+    const response = await fetch(`${backendUrl}/api/currentMeeting/agenda/${meeting}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import styles from "../styles/Home.module.scss";
 import Roles from "./main/roles";
 import Speeches from "./main/speeches";
 import type { Agenda } from "../types";
-import { useRouter } from "next/router";
 
 const Agenda = () => {
   const [agenda, setAgenda] = useState<Agenda | null>(null);
   const router = useRouter();
+  const { meeting = "0" } = router.query; // Default to 0 if no meeting parameter is provided
 
   useEffect(() => {
     const fetchAgenda = async () => {
       try {
-        const response = await fetch("api/agenda");
+        const response = await fetch(`api/agenda?meeting=${meeting}`);
 
         if (response.ok) {
           const data: Agenda = await response.json();
@@ -27,19 +28,46 @@ const Agenda = () => {
       }
     };
     fetchAgenda();
-  }, []);
+  }, [meeting]); // Re-fetch when meeting query parameter changes
+
+  const handleNavigation = (offset: number) => {
+    const newMeeting = parseInt(meeting as string, 10) + offset;
+    if (newMeeting >= 0 && newMeeting <= 3) {
+      router.push(`/?meeting=${newMeeting}`);
+    }
+  };
+
+  const currentMeeting = parseInt(meeting as string, 10);
 
   return (
     <div className={styles.agendaContainer}>
       <h1 className={styles.agendaHeader}>Current Meeting Agenda</h1>
       {agenda ? (
         <>
-            <Roles agenda={agenda} setAgenda={setAgenda} />
-            <Speeches agenda={agenda} setAgenda={setAgenda} />
+          <Roles agenda={agenda} setAgenda={setAgenda} />
+          <Speeches agenda={agenda} setAgenda={setAgenda} />
         </>
       ) : (
         <p>Loading agenda...</p>
       )}
+      <div className={styles.navigationButtons}>
+        {currentMeeting > 0 && (
+          <button
+            onClick={() => handleNavigation(-1)}
+            className={styles.button}
+          >
+            Previous Meeting
+          </button>
+        )}
+        {currentMeeting < 3 && (
+          <button
+            onClick={() => handleNavigation(1)}
+            className={styles.button}
+          >
+            Next Meeting
+          </button>
+        )}
+      </div>
     </div>
   );
 };

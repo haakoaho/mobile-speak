@@ -20,7 +20,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
 
   const title: string = req.body.title;
   const pathway: string = req.body.pathway;
-  const meetingOrder: number = req.body.meetingOrder;
+  const meetingOrder: number = req.body.meeting;
   const backendUrl = await getBackendUrl();
 
   try {

@@ -11,12 +11,13 @@ const Roles = ({
   setAgenda: Dispatch<SetStateAction<Agenda>>;
 }) => {
   const router = useRouter();
+  const { meeting = "0" } = router.query;
 
   const handleTakeRole = async (roleId: number) => {
     try {
       const response = await fetch("api/roles", {
         method: "PATCH",
-        body: JSON.stringify({ roleId: roleId })
+        body: JSON.stringify({ roleId: roleId, meeting : meeting })
       });
 
       if (response.ok) {
