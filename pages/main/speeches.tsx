@@ -2,16 +2,17 @@ import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { PathwaySpeech, pathways } from "../../pathways";
 import { Agenda, User } from "../../types";
 import styles from "../../styles/Home.module.scss";
-import router from "next/router";
 
 const Speeches = ({
   agenda,
   setAgenda,
+  meeting
 }: {
   agenda: Agenda;
+  meeting: string
   setAgenda: Dispatch<SetStateAction<Agenda>>;
 }) => {
-  const { meeting = "0" } = router.query;
+
   const [selectedPathway, setSelectedPathway] = useState<number | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [selectedSpeech, setSelectedSpeech] = useState<PathwaySpeech | null>(

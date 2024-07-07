@@ -8,7 +8,7 @@ import type { Agenda } from "../types";
 const Agenda = () => {
   const [agenda, setAgenda] = useState<Agenda | null>(null);
   const router = useRouter();
-  const { meeting = "0" } = router.query; // Default to 0 if no meeting parameter is provided
+  const { meeting = "0" } = router.query;
 
   useEffect(() => {
     const fetchAgenda = async () => {
@@ -28,7 +28,7 @@ const Agenda = () => {
       }
     };
     fetchAgenda();
-  }, [meeting]); // Re-fetch when meeting query parameter changes
+  }, [meeting]); 
 
   const handleNavigation = (offset: number) => {
     const newMeeting = parseInt(meeting as string, 10) + offset;
@@ -45,7 +45,7 @@ const Agenda = () => {
       {agenda ? (
         <>
           <Roles agenda={agenda} setAgenda={setAgenda} />
-          <Speeches agenda={agenda} setAgenda={setAgenda} />
+          <Speeches agenda={agenda} setAgenda={setAgenda} meeting={meeting as string} />
         </>
       ) : (
         <p>Loading agenda...</p>
