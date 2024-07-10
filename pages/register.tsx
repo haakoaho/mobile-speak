@@ -12,11 +12,13 @@ type FormData = {
   email: string;
   phoneNumber: string;
   acceptedTerms: boolean;
-  photoConsent: boolean | undefined;
+  gdprConsent: string;
+  photoConsent : boolean | undefined;
 };
 
 const RegisterForm = () => {
   const router = useRouter();
+  const backendUrl = getBackendUrl();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     password: "",
@@ -24,7 +26,8 @@ const RegisterForm = () => {
     email: "",
     phoneNumber: "",
     acceptedTerms: false,
-    photoConsent: undefined, 
+    gdprConsent: "", // Initialize as empty to ensure user makes a choice
+    photoConsent : undefined
   });
 
   const [error, setError] = useState<string>("");
@@ -50,18 +53,19 @@ const RegisterForm = () => {
       return;
     }
 
-    if (formData.photoConsent === undefined) {
-      setError("You must make a decision on using photos");
+    if (!formData.gdprConsent) {
+      setError("You must provide consent for GDPR compliance");
       return;
     }
 
     setError("");
     try {
-      const backendUrl = await getBackendUrl();
+      formData.photoConsent = formData.gdprConsent === "yes";
       const response = await fetch(`${backendUrl}/api/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "y",
         },
         body: JSON.stringify(formData),
       });
@@ -160,9 +164,9 @@ const RegisterForm = () => {
           <label>
             <input
               type="radio"
-              name="photoConsent"
-              value= "1"
-              checked={formData.photoConsent === true}
+              name="gdprConsent"
+              value="yes"
+              checked={formData.gdprConsent === "yes"}
               onChange={handleChange}
               required
             />
@@ -171,9 +175,9 @@ const RegisterForm = () => {
           <label>
             <input
               type="radio"
-              name="photoConsent"
-              value="0"
-              checked={formData.photoConsent === false}
+              name="gdprConsent"
+              value="no"
+              checked={formData.gdprConsent === "no"}
               onChange={handleChange}
               required
             />
