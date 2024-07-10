@@ -12,7 +12,7 @@ type FormData = {
   email: string;
   phoneNumber: string;
   acceptedTerms: boolean;
-  gdprConsent: string;
+  photoConsent: boolean | undefined;
 };
 
 const RegisterForm = () => {
@@ -24,7 +24,7 @@ const RegisterForm = () => {
     email: "",
     phoneNumber: "",
     acceptedTerms: false,
-    gdprConsent: "", // Initialize as empty to ensure user makes a choice
+    photoConsent: undefined, 
   });
 
   const [error, setError] = useState<string>("");
@@ -50,8 +50,8 @@ const RegisterForm = () => {
       return;
     }
 
-    if (!formData.gdprConsent) {
-      setError("You must provide consent for GDPR compliance");
+    if (formData.photoConsent === undefined) {
+      setError("You must make a decision on using photos");
       return;
     }
 
@@ -62,7 +62,6 @@ const RegisterForm = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "y",
         },
         body: JSON.stringify(formData),
       });
@@ -161,9 +160,9 @@ const RegisterForm = () => {
           <label>
             <input
               type="radio"
-              name="gdprConsent"
-              value="yes"
-              checked={formData.gdprConsent === "yes"}
+              name="photoConsent"
+              value= "1"
+              checked={formData.photoConsent === true}
               onChange={handleChange}
               required
             />
@@ -172,9 +171,9 @@ const RegisterForm = () => {
           <label>
             <input
               type="radio"
-              name="gdprConsent"
-              value="no"
-              checked={formData.gdprConsent === "no"}
+              name="photoConsent"
+              value="0"
+              checked={formData.photoConsent === false}
               onChange={handleChange}
               required
             />

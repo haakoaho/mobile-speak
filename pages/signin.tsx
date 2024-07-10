@@ -14,6 +14,7 @@ const LoginForm = () => {
     username: "",
     password: "",
   });
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -21,6 +22,7 @@ const LoginForm = () => {
       ...formData,
       [name]: value,
     });
+    setErrorMessage(null);
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -35,16 +37,15 @@ const LoginForm = () => {
         password,
       });
 
-      if (result?.error) {
-        console.error("Failed to sign in:", result.error);
-        // Handle error scenario
-      } else {
+      if (result.ok) {
         router.push("/");
-        // Handle the response data here, e.g., store session token
+      } else if (result.status === 401) {
+        setErrorMessage("Wrong username and/or password");
+      } else {
+        setErrorMessage("A technical error occured. Let the developer know what you did");
       }
     } catch (error) {
-      console.error("Failed to sign in:", error);
-      // Handle network or other errors
+      setErrorMessage("Something seems to be wrong with the network")
     }
   };
 
@@ -73,12 +74,12 @@ const LoginForm = () => {
             required
           />
         </label>
+        {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
         <button className={styles.loginButton} type="submit">
           Login
         </button>
-
         <a href="/register" className={styles.label}>
-          New user? Click below register
+          New user? Click below to register
         </a>
       </form>
     </div>

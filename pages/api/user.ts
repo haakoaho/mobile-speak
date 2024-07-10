@@ -27,7 +27,7 @@ export default async function GET(req: NextApiRequest, res: NextApiResponse) {
       });
 
       if (!response.ok) {
-        res.status(response.status).json({ message: response.statusText });
+        res.status(response.status).json({ message: response.json});
         return;
       }
   

@@ -3,6 +3,8 @@ export type User = {
   email: string;
   phoneNumber: string;
   id: number;
+  meetingHistory: any;
+  photoConsent: boolean;
 };
 
 export type Role = {

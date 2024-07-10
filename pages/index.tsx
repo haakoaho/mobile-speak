@@ -41,6 +41,7 @@ const Agenda = () => {
 
   return (
     <div className={styles.agendaContainer}>
+      <a href="/user">User info</a>
       <h1 className={styles.agendaHeader}>Current Meeting Agenda</h1>
       {agenda ? (
         <>
