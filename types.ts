@@ -19,6 +19,8 @@ export type Agenda = {
   theme: string;
   speakers: number;
   speeches: Speech[];
+  startDateTime : Date;
+  location: string;
 };
 
 export type Speech = {

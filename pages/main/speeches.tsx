@@ -9,10 +9,9 @@ const Speeches = ({
   meeting
 }: {
   agenda: Agenda;
-  meeting: string
+  meeting: string;
   setAgenda: Dispatch<SetStateAction<Agenda>>;
 }) => {
-
   const [selectedPathway, setSelectedPathway] = useState<number | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [selectedSpeech, setSelectedSpeech] = useState<PathwaySpeech | null>(
@@ -57,7 +56,8 @@ const Speeches = ({
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          speechId, meeting
+          speechId,
+          meeting
         }),
       });
 
@@ -66,10 +66,42 @@ const Speeches = ({
       }
 
       setMessage("Scheduled to evaluate");
-      const data : Agenda = await response.json();
+      const data: Agenda = await response.json();
       setAgenda(data);
     } catch (error) {
       setMessage("Error evaluating the speech");
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (agenda.speeches.length >= agenda.speakers) {
+      setMessage("Speaker slots are full.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/speech/speech", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title,
+          pathway: `${pathways[selectedPathway!].title}.${selectedLevel}.${selectedSpeech!.speechNumber}`,
+          meetingOrder: meeting
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to reserve the speech");
+      }
+
+      setMessage("Successfully reserved the speech");
+      const data: Agenda = await response.json();
+      setAgenda(data);
+    } catch (error) {
+      setMessage("Error reserving the speech");
     }
   };
 
@@ -138,34 +170,7 @@ const Speeches = ({
       </div>
 
       {selectedPathway !== null && selectedLevel && selectedSpeech && (
-        <form
-          onSubmit={async (e) => {
-            e.preventDefault();
-            try {
-              const response = await fetch("/api/speech/speech", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  title,
-                  pathway: pathways[selectedPathway].title + "." + selectedLevel + "." + selectedSpeech.speechNumber,
-                  meetingOrder: meeting
-                }),
-              });
-
-              if (!response.ok) {
-                throw new Error("Failed to reserve the speech");
-              }
-
-              setMessage("Successfully reserved the speech");
-              const data : Agenda = await response.json();
-              setAgenda(data);
-            } catch (error) {
-              setMessage("Error reserving the speech");
-            }
-          }}
-        >
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Title"
