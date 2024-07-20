@@ -1,15 +1,17 @@
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import { PathwaySpeech, pathways } from "../../pathways";
-import { Agenda, User } from "../../types";
+import { Agenda } from "../../types";
 import styles from "../../styles/Home.module.scss";
 
 const Speeches = ({
   agenda,
   setAgenda,
-  meeting
+  meeting,
+  userId,
 }: {
   agenda: Agenda;
   meeting: string;
+  userId : Number
   setAgenda: Dispatch<SetStateAction<Agenda>>;
 }) => {
   const [selectedPathway, setSelectedPathway] = useState<number | null>(null);
@@ -19,23 +21,7 @@ const Speeches = ({
   );
   const [title, setTitle] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const [user, setUser] = useState<User | null>(null);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await fetch("/api/user");
-        if (!response.ok) {
-          throw new Error("Failed to fetch user data");
-        }
-        const data: User = await response.json();
-        setUser(data);
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    };
-    fetchUser();
-  }, []);
 
   const handleSpeechSelection = (
     pathwayIndex: number,
@@ -189,7 +175,7 @@ const Speeches = ({
             <p>Pathway: {speech.pathway}</p>
             <p>Speaker: {speech.speakerName}</p>
             <p>Evaluator: {speech.evaluatorName || "Not assigned"}</p>
-            {user && user.id !== speech.speakerId && !speech.evaluatorId && (
+            {userId !== speech.speakerId && !speech.evaluatorId && (
               <button onClick={() => handleEvaluate(speech.id)}>
                 Evaluate
               </button>

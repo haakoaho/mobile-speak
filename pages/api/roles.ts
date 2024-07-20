@@ -10,8 +10,10 @@ export default async function PATCH(req: NextApiRequest, res: NextApiResponse) {
     const body = JSON.parse(req.body);
     const roleId : number = body.roleId;
     const meeting : string = body.meeting;
+    const force : boolean = body.force;
+    const forceString = force ? "force" : "";
 
-    const backendUrl = await getBackendUrl();
+    const backendUrl = getBackendUrl();
     if (!session) {
       res.status(401).json({ message: "Unauthorized" });
       return;
@@ -19,7 +21,7 @@ export default async function PATCH(req: NextApiRequest, res: NextApiResponse) {
   
   
     try {
-      const response = await fetch(`${backendUrl}/api/currentMeeting/reserveRole/${meeting}/${roleId}`, {
+      const response = await fetch(`${backendUrl}/api/currentMeeting/reserveRole/${meeting}/${roleId}/${forceString}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
