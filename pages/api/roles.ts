@@ -11,7 +11,9 @@ export default async function PATCH(req: NextApiRequest, res: NextApiResponse) {
     const roleId : number = body.roleId;
     const meeting : string = body.meeting;
     const force : boolean = body.force;
-    const forceString = force ? "force" : "";
+    const forceString = force ? "/force" : "";
+    const cancel : boolean = body.cancel;
+    const action = cancel ? "cancelRole" : "reserveRole";
 
     const backendUrl = getBackendUrl();
     if (!session) {
@@ -21,7 +23,7 @@ export default async function PATCH(req: NextApiRequest, res: NextApiResponse) {
   
   
     try {
-      const response = await fetch(`${backendUrl}/api/currentMeeting/reserveRole/${meeting}/${roleId}/${forceString}`, {
+      const response = await fetch(`${backendUrl}/api/currentMeeting/${action}/${meeting}/${roleId}${forceString}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

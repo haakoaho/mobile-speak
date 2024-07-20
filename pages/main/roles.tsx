@@ -6,14 +6,15 @@ import { useRouter } from "next/router";
 const Roles = ({
   agenda,
   setAgenda,
-  userId
+  userId,
+  meeting,
 }: {
   agenda: Agenda;
   userId: Number;
+  meeting: string;
   setAgenda: Dispatch<SetStateAction<Agenda>>;
 }) => {
   const router = useRouter();
-  const { meeting = "0" } = router.query;
 
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [selectedRoleId, setSelectedRoleId] = useState<number | null>(null);
@@ -22,7 +23,11 @@ const Roles = ({
     try {
       const response = await fetch("api/roles", {
         method: "PATCH",
-        body: JSON.stringify({ roleId: roleId, meeting: meeting, force: force }),
+        body: JSON.stringify({
+          roleId: roleId,
+          meeting: meeting,
+          force: force,
+        }),
       });
 
       if (response.ok) {
@@ -42,8 +47,12 @@ const Roles = ({
   const handleCancelRole = async (roleId: number) => {
     try {
       const response = await fetch("api/roles", {
-        method: "DELETE",
-        body: JSON.stringify({ roleId: roleId, meeting: meeting }),
+        method: "PATCH",
+        body: JSON.stringify({
+          roleId: roleId,
+          meeting: meeting,
+          cancel: true,
+        }),
       });
 
       if (response.ok) {
@@ -101,12 +110,14 @@ const Roles = ({
             </button>
           ) : (
             <>
-              <button
-                className={styles.redButton}
-                onClick={() => openConfirmDialog(role.roleId)}
-              >
-                Force Take Role
-              </button>
+              {role.userId !== userId && (
+                <button
+                  className={styles.redButton}
+                  onClick={() => openConfirmDialog(role.roleId)}
+                >
+                  Force Take Role
+                </button>
+              )}
               {role.userId === userId && (
                 <button
                   className={styles.cancelButton}
