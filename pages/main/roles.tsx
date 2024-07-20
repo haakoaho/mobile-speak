@@ -9,7 +9,7 @@ const Roles = ({
   userId
 }: {
   agenda: Agenda;
-  userId: number;
+  userId: Number;
   setAgenda: Dispatch<SetStateAction<Agenda>>;
 }) => {
   const router = useRouter();

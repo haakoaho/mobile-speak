@@ -90,7 +90,12 @@ const Agenda = () => {
               <strong>Location:</strong> {agenda.location}
             </p>
           </div>
-          <Roles agenda={agenda} setAgenda={setAgenda} userId={userId} />
+          <Roles
+            agenda={agenda}
+            setAgenda={setAgenda}
+            userId={userId}
+            meeting={meeting as string}
+          />
           <Speeches
             agenda={agenda}
             setAgenda={setAgenda}
