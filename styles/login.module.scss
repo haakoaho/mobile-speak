@@ -46,4 +46,21 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
+
+  $spinner-size: 60px; // Adjust this value to change the size of the spinner
+
+.spinner {
+  width: $spinner-size;
+  height: $spinner-size;
+  border: 4px solid rgba(0, 0, 0, 0.2); // Adjust opacity for border
+  border-radius: 50%;
+  border-bottom-color: transparent; // Creates half-transparent border effect
+  margin: auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
   

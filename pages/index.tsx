@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.scss";
 import Roles from "./main/roles";
 import Speeches from "./main/speeches";
 import type { Agenda, User } from "../types";
+import Navbar from "./navbar";
 
 const Agenda = () => {
   const [agenda, setAgenda] = useState<Agenda | null>(null);
@@ -71,7 +72,7 @@ const Agenda = () => {
 
   return (
     <div className={styles.agendaContainer}>
-      <a href="/user">User info</a>.
+      <Navbar></Navbar>
       <h1 className={styles.agendaHeader}>
         {agenda
           ? formatDate(agenda.startDateTime.toString())

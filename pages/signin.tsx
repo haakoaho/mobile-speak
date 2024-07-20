@@ -15,6 +15,7 @@ const LoginForm = () => {
     password: "",
   });
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -29,7 +30,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     const { username, password } = formData;
-
+    setLoading(true);
     try {
       const result = await signIn("credentials", {
         redirect: false,
@@ -42,11 +43,14 @@ const LoginForm = () => {
       } else if (result.status === 401) {
         setErrorMessage("Wrong username and/or password");
       } else {
-        setErrorMessage("A technical error occured. Let the developer know what you did");
+        setErrorMessage(
+          "A technical error occured. Let the developer know what you did"
+        );
       }
     } catch (error) {
-      setErrorMessage("Something seems to be wrong with the network")
+      setErrorMessage("Something seems to be wrong with the network");
     }
+    setLoading(false);
   };
 
   return (
@@ -82,6 +86,10 @@ const LoginForm = () => {
           New user? Click below to register
         </a>
       </form>
+      {isLoading && <div>
+        <h1>Creating a new login session. Estimated time is 1 minute</h1>
+        <div className={styles.spinner}></div>
+        </div>}
     </div>
   );
 };

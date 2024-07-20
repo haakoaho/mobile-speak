@@ -65,7 +65,6 @@ const RegisterForm = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "y",
         },
         body: JSON.stringify(formData),
       });
