@@ -8,6 +8,7 @@ export type User = {
 };
 
 export type Role = {
+  userId: number;
   roleId: number;
   roleName: string;
   userName: string | null;
