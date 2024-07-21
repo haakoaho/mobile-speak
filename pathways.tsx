@@ -1886,25 +1886,91 @@ export const pathways: Pathway[] = [
     level5: [
       {
         speechNumber: 1,
-        title: "Develop Your Vision",
+        title: "High Performance Leadership - 1",
         overview:
-          "Learn how to develop and articulate your vision for the future.",
+          "This project focuses on leading a project of significant importance to your organization or community.",
         objective:
-          "Deliver a speech about your vision for the future and how you plan to achieve it.",
+          "Deliver a speech about the planning and preparation phase of your High Performance Leadership project.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 2,
+        title: "High Performance Leadership - 2",
+        overview:
+          "This project continues from the first part of the High Performance Leadership project.",
+        objective:
+          "Deliver a speech about the execution and outcomes of your High Performance Leadership project.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Lessons Learned",
+        overview:
+          "This project focuses on sharing lessons learned from your experiences.",
+        objective:
+          "Deliver a speech about the lessons you've learned from your experiences in Toastmasters or your professional or personal life.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Moderate a Panel Discussion",
+        overview:
+          "This elective project focuses on developing skills to moderate a panel discussion effectively.",
+        objective:
+          "Moderate a panel discussion on a topic of your choice, ensuring active participation from all panel members.",
+        greenCard: "20:00",
+        yellowCard: "30:00",
+        redCard: "40:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Ethical Leadership",
+        overview:
+          "This elective project emphasizes the importance of ethical leadership and decision-making.",
+        objective:
+          "Deliver a speech about an ethical dilemma you faced, the decision you made, and the outcome.",
+        greenCard: "20:00",
+        yellowCard: "30:00",
+        redCard: "40:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Leading in Your Volunteer Organization",
+        overview:
+          "This elective project focuses on leadership skills in a volunteer organization.",
+        objective:
+          "Deliver a speech about your experiences and challenges leading in a volunteer organization.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Prepare to Speak Professionally",
+        overview:
+          "This elective project emphasizes preparing and delivering a professional-level speech.",
+        objective:
+          "Deliver a professional-level speech on a topic of your choice.",
         greenCard: "18:00",
         yellowCard: "20:00",
         redCard: "22:00",
       },
       {
-        speechNumber: 2,
+        speechNumber: 8,
         title: "Reflect on Your Path",
         overview:
-          "Review the path you have completed and the skills you have developed.",
+          "This project is a comprehensive reflection on your journey through the Persuasive Influence pathway.",
         objective:
-          "Deliver a speech reflecting on your Toastmasters journey and the progress you have made.",
+          "Deliver a speech reflecting on your growth, experiences, and accomplishments in the Persuasive Influence pathway.",
         greenCard: "10:00",
-        yellowCard: "12:00",
-        redCard: "14:00",
+        yellowCard: "11:00",
+        redCard: "12:00",
       },
     ],
   },
@@ -1972,18 +2038,20 @@ export const pathways: Pathway[] = [
         speechNumber: 1,
         title: "Know Your Sense of Humor",
         overview:
-          "Learn about your sense of humor and how it impacts your communication.",
-        objective: "Deliver a speech that explores your sense of humor.",
+          "This project focuses on understanding the different types of humor and identifying your own sense of humor.",
+        objective:
+          "Deliver a speech about your sense of humor and share examples that illustrate it.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Connect with Your Audience",
-        overview: "Learn how to connect with your audience through humor.",
+        title: "Connect With Your Audience",
+        overview:
+          "This project emphasizes the importance of connecting with your audience through humor.",
         objective:
-          "Deliver a speech that uses humor to connect with your audience.",
+          "Deliver a speech that incorporates humor and observe the audience's reaction.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -1992,9 +2060,9 @@ export const pathways: Pathway[] = [
         speechNumber: 3,
         title: "Introduction to Toastmasters Mentoring",
         overview:
-          "Learn about the importance of mentoring in Toastmasters and how to benefit from being a mentor and mentee.",
+          "This project focuses on the benefits of having a mentor and being a mentor within Toastmasters.",
         objective:
-          "Deliver a speech about your experience with mentoring or the benefits of having a mentor.",
+          "Deliver a speech about your experience with mentoring, either as a mentor or mentee.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2003,29 +2071,173 @@ export const pathways: Pathway[] = [
     level3: [
       {
         speechNumber: 1,
-        title: "Engaging Your Audience with Humor",
-        overview: "Learn how to engage your audience through the use of humor.",
-        objective: "Deliver a speech that uses humor to engage your audience.",
+        title: "Engage Your Audience with Humor",
+        overview:
+          "This project focuses on developing and delivering a speech that uses humor to engage your audience.",
+        objective:
+          "Deliver a speech that incorporates humor to enhance your message and engage your audience.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Using Humor in Different Situations",
+        title: "Active Listening",
         overview:
-          "Learn how to use humor appropriately in different situations.",
+          "This elective project emphasizes the importance of active listening in communication.",
         objective:
-          "Deliver a speech that demonstrates the appropriate use of humor in different situations.",
+          "Demonstrate your active listening skills in a meeting or conversation.",
+        greenCard: "?",
+        yellowCard: "?",
+        redCard: "?",
+      },
+      {
+        speechNumber: 3,
+        title: "Connect with Storytelling",
+        overview:
+          "This elective project focuses on using storytelling techniques to connect with your audience.",
+        objective:
+          "Deliver a speech that uses storytelling to make a strong connection with your audience.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
-        speechNumber: 3,
-        title: "Motivate Others",
-        overview: "Learn how to motivate others to achieve their goals.",
-        objective: "Deliver a speech about how you motivated others.",
+        speechNumber: 4,
+        title: "Creating Effective Visual Aids",
+        overview:
+          "This elective project focuses on creating and using visual aids to enhance your speech.",
+        objective:
+          "Deliver a speech that uses effective visual aids to enhance your message.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Deliver Social Speeches - 1",
+        overview:
+          "This elective project focuses on delivering a social speech in a short timeframe.",
+        objective: "Deliver a brief speech for a social occasion.",
+        greenCard: "3:00",
+        yellowCard: "3:30",
+        redCard: "4:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Deliver Social Speeches - 2",
+        overview:
+          "This elective project continues from the first part and focuses on delivering another social speech.",
+        objective: "Deliver another brief speech for a social occasion.",
+        greenCard: "3:00",
+        yellowCard: "3:30",
+        redCard: "4:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Effective Body Language",
+        overview:
+          "This elective project emphasizes the importance of body language in communication.",
+        objective:
+          "Deliver a speech that incorporates effective body language.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 8,
+        title: "Focus on the Positive - 1",
+        overview:
+          "This elective project focuses on the importance of maintaining a positive attitude.",
+        objective:
+          "Deliver a short speech that highlights a positive aspect of your life or work.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 9,
+        title: "Focus on the Positive - 2",
+        overview:
+          "This elective project continues from the first part and focuses on another positive aspect.",
+        objective:
+          "Deliver another short speech that highlights a positive aspect of your life or work.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 10,
+        title: "Inspire Your Audience",
+        overview:
+          "This elective project focuses on delivering an inspirational speech.",
+        objective: "Deliver a speech that inspires your audience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 11,
+        title: "Make Connections Through Networking",
+        overview:
+          "This elective project focuses on developing networking skills.",
+        objective:
+          "Deliver a speech about your experience with networking and the connections you made.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 12,
+        title: "Prepare for an Interview",
+        overview:
+          "This elective project focuses on preparing for and participating in a successful interview.",
+        objective:
+          "Deliver a speech about your preparation and experience with an interview.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 13,
+        title: "Understanding Vocal Variety",
+        overview:
+          "This elective project emphasizes the importance of vocal variety in speech delivery.",
+        objective:
+          "Deliver a speech that incorporates vocal variety to enhance your message.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 14,
+        title: "Using Descriptive Language",
+        overview:
+          "This elective project focuses on using descriptive language to paint a vivid picture for your audience.",
+        objective:
+          "Deliver a speech that incorporates descriptive language to enhance your message.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 15,
+        title: "Using Presentation Software",
+        overview:
+          "This elective project focuses on using presentation software to enhance your speech.",
+        objective:
+          "Deliver a speech that incorporates presentation software to enhance your message.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 16,
+        title: "Researching and Presenting",
+        overview:
+          "This elective project focuses on researching a topic and presenting your findings.",
+        objective:
+          "Deliver a speech that presents your research on a topic of your choice.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2034,47 +2246,211 @@ export const pathways: Pathway[] = [
     level4: [
       {
         speechNumber: 1,
-        title: "Building a Humor Toolkit",
+        title: "The Power of Humor in an Impromptu Speech - 1",
         overview:
-          "Learn how to build a toolkit of humorous material for your speeches.",
+          "This project focuses on using humor effectively in impromptu speaking situations.",
+        objective: "Deliver an impromptu speech that incorporates humor.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 2,
+        title: "The Power of Humor in an Impromptu Speech - 2",
+        overview:
+          "This project continues to develop your skills in using humor in impromptu speaking.",
+        objective: "Deliver another impromptu speech that incorporates humor.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Building a Social Media Presence",
+        overview:
+          "This elective project focuses on developing and maintaining a social media presence.",
         objective:
-          "Deliver a speech that incorporates material from your humor toolkit.",
+          "Deliver a speech about your experience with building a social media presence.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
-        speechNumber: 2,
-        title: "Using Humor in Public Speaking",
+        speechNumber: 4,
+        title: "Create a Podcast",
         overview:
-          "Learn strategies for using humor effectively in public speaking.",
+          "This elective project focuses on creating and delivering a podcast.",
         objective:
-          "Deliver a speech that uses humor effectively in public speaking.",
+          "Deliver a speech about your experience with creating a podcast.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Manage Online Meetings",
+        overview:
+          "This elective project focuses on managing online meetings effectively.",
+        objective:
+          "Deliver a speech about your experience with managing online meetings.",
+        greenCard: "20:00",
+        yellowCard: "22:30",
+        redCard: "25:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Manage Projects Successfully - 1",
+        overview:
+          "This elective project focuses on planning and managing projects successfully.",
+        objective:
+          "Deliver a speech about the planning phase of a project you managed.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Manage Projects Successfully - 2",
+        overview:
+          "This elective project continues from the first part and focuses on the execution and completion phases.",
+        objective:
+          "Deliver a speech about the execution and completion phases of a project you managed.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
+      },
+      {
+        speechNumber: 8,
+        title: "Managing a Difficult Audience",
+        overview:
+          "This elective project focuses on techniques for managing a difficult audience.",
+        objective:
+          "Deliver a speech and manage the audience effectively, even if they are difficult.",
+        greenCard: "12:00",
+        yellowCard: "13:30",
+        redCard: "15:00",
+      },
+      {
+        speechNumber: 9,
+        title: "Public Relations Strategies",
+        overview:
+          "This elective project focuses on developing and implementing public relations strategies.",
+        objective:
+          "Deliver a speech about your experience with public relations strategies.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 10,
+        title: "Question-and-Answer Session",
+        overview:
+          "This elective project focuses on preparing for and conducting a question-and-answer session.",
+        objective:
+          "Deliver a speech and conduct a question-and-answer session.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 11,
+        title: "Write a Compelling Blog",
+        overview:
+          "This elective project focuses on writing compelling blog posts.",
+        objective:
+          "Deliver a speech about your experience with writing a compelling blog post.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
       },
     ],
     level5: [
       {
         speechNumber: 1,
-        title: "Engaging Humor",
-        overview: "Learn how to engage your audience through the use of humor.",
-        objective: "Deliver a speech that uses humor to engage your audience.",
+        title: "Deliver Your Message With Humor",
+        overview:
+          "This project focuses on developing a longer speech or a series of short speeches that incorporate humor to deliver a message.",
+        objective:
+          "Deliver a speech or a series of short speeches that incorporate humor to effectively deliver a message.",
         greenCard: "18:00",
         yellowCard: "20:00",
         redCard: "22:00",
       },
       {
         speechNumber: 2,
+        title: "Ethical Leadership",
+        overview:
+          "This elective project focuses on understanding and practicing ethical leadership.",
+        objective:
+          "Deliver a speech about your understanding and experience with ethical leadership.",
+        greenCard: "20:00",
+        yellowCard: "30:00",
+        redCard: "40:00",
+      },
+      {
+        speechNumber: 3,
+        title: "High Performance Leadership - 1",
+        overview:
+          "This elective project involves planning and executing a leadership project. This is the first part of the project.",
+        objective:
+          "Deliver a speech about the planning phase of your leadership project.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 4,
+        title: "High Performance Leadership - 2",
+        overview:
+          "This elective project involves planning and executing a leadership project. This is the second part of the project.",
+        objective:
+          "Deliver a speech about the execution and outcomes of your leadership project.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Lessons Learned",
+        overview:
+          "This elective project focuses on sharing the lessons you've learned from your experiences in Toastmasters.",
+        objective:
+          "Deliver a speech about the lessons you've learned from your experiences in Toastmasters.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Moderate a Panel Discussion",
+        overview:
+          "This elective project focuses on preparing for and moderating a panel discussion.",
+        objective: "Moderate a panel discussion on a topic of your choice.",
+        greenCard: "20:00",
+        yellowCard: "30:00",
+        redCard: "40:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Prepare to Speak Professionally",
+        overview:
+          "This elective project focuses on preparing for and delivering a professional-level speech.",
+        objective:
+          "Deliver a professional-level speech to a club or other audience.",
+        greenCard: "18:00",
+        yellowCard: "20:00",
+        redCard: "22:00",
+      },
+      {
+        speechNumber: 8,
         title: "Reflect on Your Path",
         overview:
-          "Review the path you have completed and the skills you have developed.",
+          "This project focuses on reviewing and reflecting on the path you have completed.",
         objective:
-          "Deliver a speech reflecting on your Toastmasters journey and the progress you have made.",
+          "Deliver a speech about your journey through the Engaging Humor pathway.",
         greenCard: "10:00",
-        yellowCard: "12:00",
-        redCard: "14:00",
+        yellowCard: "11:00",
+        redCard: "12:00",
       },
     ],
   },
@@ -2142,19 +2518,20 @@ export const pathways: Pathway[] = [
         speechNumber: 1,
         title: "Understanding Your Leadership Style",
         overview:
-          "Identify your leadership style and how it impacts your interactions with others.",
+          "This project focuses on identifying your personal leadership style and the impact it has on your environment and the people around you.",
         objective:
-          "Deliver a speech that discusses your leadership style and its impact.",
+          "Learn about different leadership styles and identify your own. Reflect on how your leadership style impacts your interactions.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Active Listening",
+        title: "Understanding Your Communication Style",
         overview:
-          "Learn how to listen actively and provide effective feedback.",
-        objective: "Deliver a speech about the importance of active listening.",
+          "This project focuses on identifying your communication style, understanding how it impacts your interactions with others, and improving your ability to lead.",
+        objective:
+          "Identify your communication style and consider how it affects your leadership and interactions. Deliver a speech reflecting on your communication style and its impact.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2163,9 +2540,9 @@ export const pathways: Pathway[] = [
         speechNumber: 3,
         title: "Introduction to Toastmasters Mentoring",
         overview:
-          "Learn about the importance of mentoring in Toastmasters and how to benefit from being a mentor and mentee.",
+          "This project introduces the value of mentorship and the responsibilities of being a mentor. You will prepare for and start the process of mentoring.",
         objective:
-          "Deliver a speech about your experience with mentoring or the benefits of having a mentor.",
+          "Deliver a speech about a time when you were mentored or when you mentored someone else.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2174,29 +2551,204 @@ export const pathways: Pathway[] = [
     level3: [
       {
         speechNumber: 1,
-        title: "Effective Team Building",
-        overview: "Learn how to build and lead an effective team.",
+        title: "Negotiate the Best Outcome",
+        overview:
+          "This project focuses on understanding the principles of negotiation and implementing them to achieve a mutually beneficial outcome.",
         objective:
-          "Deliver a speech about a time you built and led an effective team.",
+          "Learn and apply negotiation strategies to reach an agreement. Deliver a speech reflecting on your experience with negotiation.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Inspiring Leadership",
-        overview: "Learn how to inspire others through your leadership.",
+        title: "Deliver Social Speeches - 1",
+        overview:
+          "This elective project focuses on preparing and delivering a social speech for a special occasion.",
+        objective: "Prepare and deliver a brief speech for a social occasion.",
+        greenCard: "3:00",
+        yellowCard: "3:30",
+        redCard: "4:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Deliver Social Speeches - 2",
+        overview:
+          "This elective project focuses on preparing and delivering a social speech for a special occasion.",
         objective:
-          "Deliver a speech about a time you inspired others through your leadership.",
+          "Prepare and deliver a second brief speech for a social occasion.",
+        greenCard: "3:00",
+        yellowCard: "3:30",
+        redCard: "4:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Using Presentation Software",
+        overview:
+          "This elective project focuses on learning how to effectively use presentation software to support your message.",
+        objective:
+          "Prepare a speech that uses presentation software to enhance the message.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
-        speechNumber: 3,
-        title: "Motivate Others",
-        overview: "Learn how to motivate others to achieve their goals.",
-        objective: "Deliver a speech about how you motivated others.",
+        speechNumber: 5,
+        title: "Connect with Storytelling",
+        overview:
+          "This elective project focuses on the techniques of storytelling and how to use them to connect with an audience.",
+        objective: "Prepare and deliver a speech that tells a story.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Creating Effective Visual Aids",
+        overview:
+          "This elective project focuses on creating and using visual aids to enhance your speech.",
+        objective: "Prepare a speech that uses visual aids effectively.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Using Descriptive Language",
+        overview:
+          "This elective project focuses on the importance of descriptive language and how it enhances a speech.",
+        objective:
+          "Prepare a speech that uses descriptive language to paint a vivid picture for your audience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 8,
+        title: "Connect with Your Audience",
+        overview:
+          "This elective project focuses on learning and applying techniques to connect with your audience.",
+        objective:
+          "Prepare a speech that uses techniques to connect with your audience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 9,
+        title: "Make Connections Through Networking",
+        overview:
+          "This elective project focuses on building and maintaining professional relationships through networking.",
+        objective:
+          "Prepare a speech about the importance of networking and your experience with it.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 10,
+        title: "Focus on the Positive - 1",
+        overview:
+          "This elective project focuses on the importance of maintaining a positive attitude and how it can benefit your life and interactions.",
+        objective:
+          "Prepare a brief speech on the benefits of focusing on the positive.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 11,
+        title: "Focus on the Positive - 2",
+        overview:
+          "This elective project focuses on the importance of maintaining a positive attitude and how it can benefit your life and interactions.",
+        objective:
+          "Prepare a speech on a personal experience where focusing on the positive made a difference.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 12,
+        title: "Inspire Your Audience",
+        overview:
+          "This elective project focuses on learning and applying techniques to inspire your audience.",
+        objective: "Prepare and deliver a speech that inspires your audience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 13,
+        title: "Prepare for an Interview",
+        overview:
+          "This elective project focuses on the skills needed to prepare for and succeed in an interview.",
+        objective:
+          "Prepare and deliver a speech on your experience with interviews or tips for succeeding in an interview.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 14,
+        title: "Understanding Vocal Variety",
+        overview:
+          "This elective project focuses on the use of vocal variety to enhance a speech.",
+        objective:
+          "Prepare and deliver a speech that uses vocal variety to add impact.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 15,
+        title: "Deliver Social Speeches - 1",
+        overview:
+          "This elective project focuses on preparing and delivering a social speech for a special occasion.",
+        objective: "Prepare and deliver a brief speech for a social occasion.",
+        greenCard: "3:00",
+        yellowCard: "3:30",
+        redCard: "4:00",
+      },
+      {
+        speechNumber: 16,
+        title: "Active Listening",
+        overview:
+          "This elective project focuses on the importance of active listening and how it can improve your communication skills.",
+        objective:
+          "Prepare and deliver a speech on your experience with active listening or the benefits it has brought you.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 17,
+        title: "Know Your Sense of Humor",
+        overview:
+          "This elective project focuses on understanding and applying your sense of humor in speeches.",
+        objective:
+          "Prepare and deliver a speech that uses your sense of humor effectively.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 18,
+        title: "Effective Body Language",
+        overview:
+          "This elective project focuses on the use of body language to enhance a speech.",
+        objective:
+          "Prepare and deliver a speech that uses body language to add impact.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 19,
+        title: "Researching and Presenting",
+        overview:
+          "This elective project focuses on conducting research and presenting it effectively.",
+        objective:
+          "Prepare and deliver a speech that incorporates research findings.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2205,20 +2757,110 @@ export const pathways: Pathway[] = [
     level4: [
       {
         speechNumber: 1,
-        title: "Managing Challenges",
-        overview: "Learn how to manage and overcome challenges.",
+        title: "Manage Change",
+        overview:
+          "This project focuses on the skills needed to manage change effectively in an organization or team.",
         objective:
-          "Deliver a speech about a time you managed and overcame challenges.",
+          "Learn and apply strategies to manage change effectively. Deliver a speech on your experience with managing change.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Negotiating Skills",
-        overview: "Learn effective negotiation skills.",
+        title: "Create a Podcast",
+        overview:
+          "This elective project focuses on the skills needed to create and publish a podcast.",
         objective:
-          "Deliver a speech about a time you used negotiation skills successfully.",
+          "Create a podcast of two to three minutes. Deliver a speech about the experience.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Building a Social Media Presence",
+        overview:
+          "This elective project focuses on the skills needed to build and maintain a social media presence.",
+        objective:
+          "Develop a social media presence. Deliver a speech about your experience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Managing a Difficult Audience",
+        overview:
+          "This elective project focuses on strategies for managing a difficult audience during a presentation.",
+        objective:
+          "Prepare and deliver a speech to a difficult audience, applying techniques to manage the situation.",
+        greenCard: "12:00",
+        yellowCard: "13:30",
+        redCard: "15:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Write a Compelling Blog",
+        overview:
+          "This elective project focuses on the skills needed to write and publish a compelling blog.",
+        objective:
+          "Write a blog post of 200 to 800 words. Deliver a speech about your experience.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Manage Online Meetings",
+        overview:
+          "This elective project focuses on the skills needed to manage effective online meetings.",
+        objective:
+          "Learn and apply strategies for managing online meetings. Deliver a speech about your experience.",
+        greenCard: "20:00",
+        yellowCard: "23:00",
+        redCard: "25:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Question-and-Answer Session",
+        overview:
+          "This elective project focuses on the skills needed to handle a question-and-answer session effectively.",
+        objective:
+          "Prepare and deliver a speech, followed by a question-and-answer session.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 8,
+        title: "Public Relations Strategies",
+        overview:
+          "This elective project focuses on the skills needed to develop and implement effective public relations strategies.",
+        objective:
+          "Develop and implement a public relations strategy. Deliver a speech about your experience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 9,
+        title: "Manage Projects Successfully - 1",
+        overview:
+          "This elective project focuses on the skills needed to manage projects successfully.",
+        objective:
+          "Learn and apply project management skills. Deliver a speech about a project you managed successfully.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 10,
+        title: "Manage Projects Successfully - 2",
+        overview:
+          "This elective project focuses on the skills needed to manage projects successfully.",
+        objective:
+          "Learn and apply project management skills. Deliver a speech about a project you managed successfully.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2227,25 +2869,102 @@ export const pathways: Pathway[] = [
     level5: [
       {
         speechNumber: 1,
-        title: "Dynamic Leadership",
+        title: "Lead in Any Situation",
         overview:
-          "Learn how to lead dynamically and adapt to changing situations.",
+          "This project focuses on the skills needed to lead in various situations and environments.",
         objective:
-          "Deliver a speech about a time you led dynamically and adapted to changing situations.",
+          "Develop and demonstrate your ability to lead in a specific situation. Deliver a speech on your leadership experience.",
+        greenCard: "8:00",
+        yellowCard: "9:00",
+        redCard: "10:00",
+      },
+      {
+        speechNumber: 2,
+        title: "Lessons Learned",
+        overview:
+          "This project focuses on reflecting on and sharing the lessons you have learned throughout your Toastmasters journey.",
+        objective:
+          "Reflect on your experiences and lessons learned in Toastmasters. Deliver a speech sharing these lessons.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Moderate a Panel Discussion",
+        overview:
+          "This elective project focuses on the skills needed to effectively moderate a panel discussion.",
+        objective:
+          "Prepare and moderate a panel discussion on a topic of your choice. Ensure the discussion lasts between 20 and 40 minutes.",
+        greenCard: "20:00",
+        yellowCard: "30:00",
+        redCard: "40:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Ethical Leadership",
+        overview:
+          "This elective project focuses on the principles and practices of ethical leadership.",
+        objective:
+          "Develop and demonstrate ethical leadership skills. Deliver a speech on your experience with ethical leadership.",
+        greenCard: "20:00",
+        yellowCard: "30:00",
+        redCard: "40:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Leading in Your Volunteer Organization",
+        overview:
+          "This elective project focuses on the skills needed to lead effectively in a volunteer organization.",
+        objective:
+          "Develop and demonstrate leadership skills within a volunteer organization. Deliver a speech on your experience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Prepare to Speak Professionally",
+        overview:
+          "This elective project focuses on preparing and delivering a professional-level speech.",
+        objective:
+          "Develop and deliver a professional-level speech on a topic of your choice. Ensure your speech lasts between 18 and 22 minutes.",
         greenCard: "18:00",
         yellowCard: "20:00",
         redCard: "22:00",
       },
       {
-        speechNumber: 2,
+        speechNumber: 7,
+        title: "High Performance Leadership - 1",
+        overview:
+          "This elective project focuses on the skills needed to lead a high-performance team.",
+        objective:
+          "Develop and demonstrate high-performance leadership skills. Deliver a speech on your experience leading a high-performance team.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 8,
+        title: "High Performance Leadership - 2",
+        overview:
+          "This elective project focuses on the skills needed to lead a high-performance team.",
+        objective:
+          "Develop and demonstrate high-performance leadership skills. Deliver a speech on your experience leading a high-performance team.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 9,
         title: "Reflect on Your Path",
         overview:
-          "Review the path you have completed and the skills you have developed.",
+          "This project focuses on reflecting on your growth and experiences throughout the Dynamic Leadership pathway.",
         objective:
-          "Deliver a speech reflecting on your Toastmasters journey and the progress you have made.",
+          "Reflect on your experiences and growth in the Dynamic Leadership pathway. Deliver a speech sharing your reflections.",
         greenCard: "10:00",
-        yellowCard: "12:00",
-        redCard: "14:00",
+        yellowCard: "11:00",
+        redCard: "12:00",
       },
     ],
   },
@@ -2311,21 +3030,22 @@ export const pathways: Pathway[] = [
     level2: [
       {
         speechNumber: 1,
-        title: "Understanding Motivation",
+        title: "Active Listening",
         overview:
-          "Learn about different motivational strategies and how they can be applied.",
+          "This project focuses on the skills needed to listen actively and effectively in various situations.",
         objective:
-          "Deliver a speech about different motivational strategies and their effectiveness.",
+          "Develop and demonstrate active listening skills. Deliver a speech on your experience with active listening.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Active Listening",
+        title: "Understanding Your Communication Style",
         overview:
-          "Learn how to listen actively and provide effective feedback.",
-        objective: "Deliver a speech about the importance of active listening.",
+          "This project focuses on identifying and understanding your personal communication style.",
+        objective:
+          "Analyze your communication style and deliver a speech on what you have learned.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2334,9 +3054,9 @@ export const pathways: Pathway[] = [
         speechNumber: 3,
         title: "Introduction to Toastmasters Mentoring",
         overview:
-          "Learn about the importance of mentoring in Toastmasters and how to benefit from being a mentor and mentee.",
+          "This project focuses on the benefits of having a mentor and being a mentor within Toastmasters.",
         objective:
-          "Deliver a speech about your experience with mentoring or the benefits of having a mentor.",
+          "Deliver a speech about your experience with mentoring, either as a mentor or mentee.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2345,29 +3065,187 @@ export const pathways: Pathway[] = [
     level3: [
       {
         speechNumber: 1,
-        title: "Motivational Techniques",
-        overview: "Learn various techniques to motivate individuals and teams.",
+        title: "Understanding Emotional Intelligence",
+        overview:
+          "This project explores the concept of emotional intelligence and its role in motivating others.",
         objective:
-          "Deliver a speech demonstrating the application of motivational techniques.",
+          "Deliver a speech on emotional intelligence, how it affects motivation, and how to leverage it in leadership.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Inspiring Leadership",
-        overview: "Learn how to inspire others through your leadership.",
+        title: "Deliver Social Speeches - 1",
+        overview:
+          "This project focuses on delivering short, impactful speeches that are appropriate for social settings.",
         objective:
-          "Deliver a speech about a time you inspired others through your leadership.",
+          "Deliver a speech designed for a social setting, focusing on clarity and engagement.",
+        greenCard: "3:00",
+        yellowCard: "3:30",
+        redCard: "4:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Deliver Social Speeches - 2",
+        overview:
+          "This project builds on the skills learned in Deliver Social Speeches - 1, emphasizing different approaches to engaging an audience.",
+        objective:
+          "Deliver another speech for a social setting, incorporating feedback from the previous speech and focusing on improving engagement.",
+        greenCard: "3:00",
+        yellowCard: "3:30",
+        redCard: "4:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Using Presentation Software",
+        overview:
+          "This project covers the use of presentation software to enhance speeches.",
+        objective:
+          "Create and use visual aids in a speech, demonstrating effective use of presentation software.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
-        speechNumber: 3,
-        title: "Motivate Others",
-        overview: "Learn how to motivate others to achieve their goals.",
-        objective: "Deliver a speech about how you motivated others.",
+        speechNumber: 5,
+        title: "Connect with Storytelling",
+        overview:
+          "This project focuses on the use of storytelling to connect with and motivate your audience.",
+        objective:
+          "Incorporate storytelling techniques into your speech to engage and motivate your audience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Creating Effective Visual Aids",
+        overview:
+          "This project teaches how to create visual aids that complement and enhance your speech.",
+        objective:
+          "Design and use visual aids in your speech to support and clarify your message.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Using Descriptive Language",
+        overview:
+          "This project focuses on the use of descriptive language to create vivid imagery and engage your audience.",
+        objective:
+          "Incorporate descriptive language into your speech to enhance storytelling and audience engagement.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 8,
+        title: "Connect with Your Audience",
+        overview:
+          "This project explores techniques to build a strong connection with your audience.",
+        objective:
+          "Deliver a speech that demonstrates effective strategies for connecting with and engaging your audience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 9,
+        title: "Make Connections Through Networking",
+        overview:
+          "This project emphasizes the importance of networking and how to effectively make connections.",
+        objective:
+          "Deliver a speech on strategies for effective networking and making professional connections.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 10,
+        title: "Focus on the Positive - 1",
+        overview:
+          "This project introduces techniques for focusing on positive aspects and conveying optimism.",
+        objective:
+          "Deliver a short speech that demonstrates how to focus on positive aspects and convey an optimistic message.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 11,
+        title: "Focus on the Positive - 2",
+        overview:
+          "This project builds on the previous one, encouraging deeper exploration of positivity and its impact.",
+        objective:
+          "Deliver a longer speech that expands on techniques for maintaining and promoting positivity.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 12,
+        title: "Inspire Your Audience",
+        overview:
+          "This project focuses on techniques to inspire and motivate your audience.",
+        objective:
+          "Deliver a speech designed to inspire and motivate your audience, utilizing various motivational techniques.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 13,
+        title: "Prepare for an Interview",
+        overview:
+          "This project prepares you for interviews by focusing on presentation and communication skills.",
+        objective:
+          "Deliver a speech on how to effectively prepare for and succeed in interviews.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 14,
+        title: "Understanding Vocal Variety",
+        overview:
+          "This project focuses on the use of vocal variety to enhance your speech delivery.",
+        objective:
+          "Demonstrate effective use of vocal variety in your speech to maintain audience interest and convey emotion.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 15,
+        title: "Effective Body Language",
+        overview:
+          "This project emphasizes the role of body language in effective communication.",
+        objective:
+          "Incorporate effective body language into your speech to support your message and engage your audience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 16,
+        title: "Know Your Sense of Humor",
+        overview:
+          "This project explores how to use humor effectively in your speeches.",
+        objective:
+          "Demonstrate an understanding of how humor can be used to engage and motivate your audience.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 17,
+        title: "Researching and Presenting",
+        overview:
+          "This project focuses on researching a topic and presenting your findings effectively.",
+        objective:
+          "Research a topic and deliver a well-organized speech presenting your findings and insights.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2376,19 +3254,110 @@ export const pathways: Pathway[] = [
     level4: [
       {
         speechNumber: 1,
-        title: "Motivating a Team",
-        overview: "Learn how to motivate a team to achieve common goals.",
-        objective: "Deliver a speech about a time you motivated a team.",
+        title: "Motivate Others",
+        overview:
+          "This project focuses on strategies to inspire and motivate others effectively.",
+        objective:
+          "Deliver a speech demonstrating effective techniques for motivating and inspiring others.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Understanding Emotional Intelligence",
-        overview: "Learn how emotional intelligence impacts motivation.",
+        title: "Create a Podcast",
+        overview:
+          "This project involves creating and presenting a podcast episode, focusing on content and delivery.",
         objective:
-          "Deliver a speech about the role of emotional intelligence in motivation.",
+          "Produce and present a podcast episode that engages and informs your audience.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Building a Social Media Presence",
+        overview:
+          "This project explores techniques for establishing and maintaining a professional social media presence.",
+        objective:
+          "Create and implement a plan for building and enhancing your social media presence.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Managing a Difficult Audience",
+        overview:
+          "This project focuses on strategies for handling and managing challenging audience situations.",
+        objective:
+          "Deliver a speech on techniques for managing and engaging with a difficult audience.",
+        greenCard: "12:00",
+        yellowCard: "13:00",
+        redCard: "15:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Write a Compelling Blog",
+        overview:
+          "This project involves writing a compelling blog post, focusing on engaging content and effective writing techniques.",
+        objective:
+          "Write and present a blog post that captures the audience's attention and delivers a clear message.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Manage Online Meetings",
+        overview:
+          "This project covers the management and facilitation of effective online meetings.",
+        objective:
+          "Demonstrate effective techniques for managing and leading online meetings, focusing on engagement and productivity.",
+        greenCard: "20:00",
+        yellowCard: "22:00",
+        redCard: "25:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Question-and-Answer Session",
+        overview:
+          "This project involves managing a question-and-answer session, addressing questions, and maintaining control.",
+        objective:
+          "Conduct a Q&A session, demonstrating effective techniques for handling questions and keeping the session on track.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 8,
+        title: "Public Relations Strategies",
+        overview:
+          "This project explores strategies for effective public relations and communication.",
+        objective:
+          "Present a plan for implementing effective public relations strategies and techniques.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 9,
+        title: "Manage Projects Successfully - 1",
+        overview:
+          "This project introduces key principles of successful project management.",
+        objective:
+          "Deliver a speech on foundational principles of managing projects successfully.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 10,
+        title: "Manage Projects Successfully - 2",
+        overview:
+          "This project builds on the previous one, focusing on advanced project management techniques.",
+        objective:
+          "Deliver a more detailed speech on advanced techniques for managing projects successfully.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2397,24 +3366,113 @@ export const pathways: Pathway[] = [
     level5: [
       {
         speechNumber: 1,
-        title: "Mastering Motivation",
-        overview: "Learn how to master the art of motivation.",
+        title: "Team Building - 1",
+        overview:
+          "This project involves demonstrating techniques for effective team building and collaboration.",
         objective:
-          "Deliver a speech demonstrating mastery of motivational strategies.",
+          "Deliver a speech focusing on strategies and techniques for building and strengthening a team.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 2,
+        title: "Team Building - 2",
+        overview:
+          "This project continues from Team Building - 1, with a focus on advanced team building techniques and implementation.",
+        objective:
+          "Deliver a detailed speech on advanced strategies for team building and creating effective team dynamics.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Lessons Learned",
+        overview:
+          "This project involves reflecting on your journey and sharing the lessons learned from your experiences.",
+        objective:
+          "Present a speech reflecting on the lessons learned throughout your Toastmasters journey and how they have impacted your personal and professional growth.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Moderate a Panel Discussion",
+        overview:
+          "This project involves moderating a panel discussion, focusing on managing the discussion, engaging panelists, and handling audience questions.",
+        objective:
+          "Moderate a panel discussion, demonstrating effective techniques for managing the conversation and engaging both the panelists and the audience.",
+        greenCard: "20:00",
+        yellowCard: "25:00",
+        redCard: "30:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Ethical Leadership",
+        overview:
+          "This project focuses on demonstrating and discussing the principles of ethical leadership in various scenarios.",
+        objective:
+          "Deliver a speech on the principles of ethical leadership, including real-world examples and strategies for maintaining ethical standards in leadership roles.",
+        greenCard: "20:00",
+        yellowCard: "25:00",
+        redCard: "30:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Leading in Your Volunteer Organization",
+        overview:
+          "This project involves discussing and demonstrating leadership strategies specifically for volunteer organizations.",
+        objective:
+          "Present a speech on leadership strategies and best practices tailored to leading in a volunteer organization.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Prepare to Speak Professionally",
+        overview:
+          "This project focuses on preparing and delivering a professional speech in a high-stakes or formal setting.",
+        objective:
+          "Deliver a professional speech that demonstrates advanced preparation and presentation skills suitable for a formal or high-stakes environment.",
         greenCard: "18:00",
         yellowCard: "20:00",
         redCard: "22:00",
       },
       {
-        speechNumber: 2,
+        speechNumber: 8,
+        title: "High Performance Leadership - 1",
+        overview:
+          "This project involves developing a high-performance leadership plan and implementing it.",
+        objective:
+          "Present the first part of a plan for high-performance leadership, including specific goals and strategies for achieving excellence.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 9,
+        title: "High Performance Leadership - 2",
+        overview:
+          "This project builds on High Performance Leadership - 1, focusing on evaluating and reflecting on the implementation of the leadership plan.",
+        objective:
+          "Deliver a speech reflecting on the implementation of your high-performance leadership plan, including outcomes and lessons learned.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 10,
         title: "Reflect on Your Path",
         overview:
-          "Review the path you have completed and the skills you have developed.",
+          "This project involves reflecting on your entire Toastmasters journey and how it has influenced your growth and development.",
         objective:
-          "Deliver a speech reflecting on your Toastmasters journey and the progress you have made.",
+          "Present a reflective speech on your Toastmasters journey, discussing personal growth, key experiences, and future aspirations.",
         greenCard: "10:00",
-        yellowCard: "12:00",
-        redCard: "14:00",
+        yellowCard: "11:00",
+        redCard: "12:00",
       },
     ],
   },
@@ -2480,32 +3538,33 @@ export const pathways: Pathway[] = [
     level2: [
       {
         speechNumber: 1,
-        title: "Understanding Your Audience",
+        title: "Understanding Your Leadership Style",
         overview:
-          "Learn how to analyze your audience and tailor your message to their needs.",
+          "This project involves identifying and understanding your leadership style and how it impacts your interactions and effectiveness.",
         objective:
-          "Deliver a speech that demonstrates your understanding of your audience.",
+          "Deliver a speech that outlines your leadership style, including its strengths and areas for growth, and how it influences your leadership approach.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Effective Use of Visual Aids",
+        title: "Connect With Your Audience",
         overview:
-          "Learn how to effectively use visual aids to enhance your message.",
+          "This project focuses on techniques for establishing a strong connection with your audience, making your message more engaging and effective.",
         objective:
-          "Deliver a speech that incorporates visual aids effectively.",
+          "Deliver a speech that demonstrates your ability to connect with your audience through engagement strategies, relatable content, and audience interaction.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 3,
-        title: "Inspire Your Audience",
+        title: "Introduction to Toastmasters Mentoring",
         overview:
-          "Learn how to inspire and motivate your audience through your speech.",
-        objective: "Deliver an inspiring speech that motivates your audience.",
+          "This project involves understanding the role of mentoring in Toastmasters and how to effectively mentor others.",
+        objective:
+          "Deliver a speech on the importance of mentoring in Toastmasters, outlining effective mentoring techniques and your approach to mentoring.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2514,33 +3573,187 @@ export const pathways: Pathway[] = [
     level3: [
       {
         speechNumber: 1,
-        title: "The Power of Storytelling",
+        title: "Present a Proposal",
         overview:
-          "Learn how to effectively use storytelling to convey your message.",
+          "This project involves presenting a proposal, demonstrating your ability to clearly and effectively communicate an idea or plan.",
         objective:
-          "Deliver a speech that uses storytelling to convey your message effectively.",
+          "Deliver a speech that presents a well-researched proposal, including your recommendations and justifications, and address potential questions or concerns.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
         speechNumber: 2,
-        title: "Connect with Your Audience Emotionally",
+        title: "Deliver Social Speeches - 1",
         overview:
-          "Learn how to connect with your audience on an emotional level.",
+          "This project involves delivering a speech in a social setting, focusing on engaging and entertaining your audience.",
         objective:
-          "Deliver a speech that connects with your audience emotionally.",
+          "Deliver a speech that is appropriate for a social setting, demonstrating effective use of humor, storytelling, or other techniques to engage the audience.",
+        greenCard: "3:00",
+        yellowCard: "3:30",
+        redCard: "4:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Deliver Social Speeches - 2",
+        overview:
+          "This project continues the focus on social speeches, providing another opportunity to demonstrate your skills in engaging an audience in a casual setting.",
+        objective:
+          "Deliver a second social speech, showcasing your ability to adapt your content and style to different social contexts while maintaining audience engagement.",
+        greenCard: "3:00",
+        yellowCard: "3:30",
+        redCard: "4:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Using Presentation Software",
+        overview:
+          "This project focuses on the effective use of presentation software to enhance your speeches and presentations.",
+        objective:
+          "Deliver a speech that incorporates presentation software to support and enhance your message, demonstrating your ability to use visual aids effectively.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
-        speechNumber: 3,
-        title: "Effective Use of Language",
+        speechNumber: 5,
+        title: "Creating Effective Visual Aids",
         overview:
-          "Learn how to use language effectively to enhance your message.",
+          "This project involves creating visual aids that support and enhance your speech or presentation.",
         objective:
-          "Deliver a speech that demonstrates effective use of language.",
+          "Deliver a speech that utilizes well-designed visual aids to reinforce your message, demonstrating your skills in creating and using visual elements effectively.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Using Descriptive Language",
+        overview:
+          "This project focuses on the use of descriptive language to make your speeches more vivid and engaging.",
+        objective:
+          "Deliver a speech that effectively uses descriptive language to create a vivid picture for your audience, enhancing their understanding and engagement with your message.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Make Connections Through Networking",
+        overview:
+          "This project involves demonstrating your ability to build connections and network effectively within professional and social contexts.",
+        objective:
+          "Deliver a speech that showcases your networking skills, including how you build and maintain connections and leverage them for professional or personal growth.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 8,
+        title: "Focus on the Positive - 1",
+        overview:
+          "This project involves focusing on positive aspects of a situation and communicating them effectively.",
+        objective:
+          "Deliver a short speech that highlights the positive aspects of a given situation, demonstrating your ability to focus on and communicate optimism and constructive feedback.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 9,
+        title: "Focus on the Positive - 2",
+        overview:
+          "This project continues the focus on positivity, providing another opportunity to demonstrate your skills in highlighting positive aspects.",
+        objective:
+          "Deliver a longer speech that continues to focus on positive aspects, showcasing your ability to maintain a positive perspective and inspire others through your message.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 10,
+        title: "Inspire Your Audience",
+        overview:
+          "This project focuses on inspiring and motivating your audience through your speech.",
+        objective:
+          "Deliver a speech that inspires and motivates your audience, demonstrating your ability to convey passion, enthusiasm, and a compelling vision or message.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 11,
+        title: "Prepare for an Interview",
+        overview:
+          "This project involves preparing for and delivering a speech that simulates a job interview or other formal interview scenario.",
+        objective:
+          "Deliver a speech that demonstrates your preparation and readiness for an interview, including how you present yourself and respond to questions or scenarios.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 12,
+        title: "Understanding Vocal Variety",
+        overview:
+          "This project focuses on using vocal variety to enhance your speech and engage your audience.",
+        objective:
+          "Deliver a speech that demonstrates effective use of vocal variety, including pitch, tone, pace, and volume, to enhance your message and maintain audience interest.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 13,
+        title: "Effective Body Language",
+        overview:
+          "This project focuses on the use of body language to complement and enhance your speech.",
+        objective:
+          "Deliver a speech that utilizes effective body language to support your message, including gestures, posture, and facial expressions.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 14,
+        title: "Active Listening",
+        overview:
+          "This project involves demonstrating active listening skills during your speech or presentation.",
+        objective:
+          "Deliver a speech that incorporates elements of active listening, including how you engage with your audience and respond to their feedback or questions.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 15,
+        title: "Connect with Storytelling",
+        overview:
+          "This project focuses on using storytelling to connect with your audience and enhance your message.",
+        objective:
+          "Deliver a speech that incorporates storytelling to create a connection with your audience, making your message more relatable and memorable.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 16,
+        title: "Know Your Sense of Humor",
+        overview:
+          "This project involves incorporating humor effectively into your speech.",
+        objective:
+          "Deliver a speech that demonstrates your sense of humor and how it can be used to engage and entertain your audience while supporting your message.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 17,
+        title: "Researching and Presenting",
+        overview:
+          "This project focuses on conducting research and presenting findings in a clear and engaging manner.",
+        objective:
+          "Deliver a speech that showcases your research skills and ability to present information clearly, demonstrating effective use of research to support your message.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2549,20 +3762,99 @@ export const pathways: Pathway[] = [
     level4: [
       {
         speechNumber: 1,
-        title: "Developing a Compelling Vision",
-        overview: "Learn how to develop and articulate a compelling vision.",
+        title: "Manage Projects Successfully - 1",
+        overview:
+          "This project involves demonstrating your ability to manage a small-scale project successfully.",
         objective:
-          "Deliver a speech that presents a compelling vision and inspires your audience.",
+          "Deliver a speech or presentation on a project you have managed, highlighting your planning, execution, and outcomes.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 2,
+        title: "Manage Projects Successfully - 2",
+        overview:
+          "This project continues the focus on project management, providing an opportunity to showcase your skills in a more complex project.",
+        objective:
+          "Deliver a detailed speech or presentation on a more complex project you have managed, including insights into overcoming challenges and achieving goals.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
       },
       {
-        speechNumber: 2,
-        title: "Leading Change",
-        overview: "Learn how to lead and manage change effectively.",
+        speechNumber: 3,
+        title: "Create a Podcast",
+        overview:
+          "This project involves creating and presenting a podcast episode, demonstrating your ability to communicate effectively through audio media.",
         objective:
-          "Deliver a speech about a change initiative you led and its impact.",
+          "Produce a podcast episode that showcases your skills in audio production, scripting, and delivering content in a compelling manner.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Building a Social Media Presence",
+        overview:
+          "This project focuses on developing a strong social media presence and effectively using platforms to communicate your message.",
+        objective:
+          "Deliver a presentation on your strategy for building and maintaining a social media presence, including how you engage with your audience and measure success.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Managing a Difficult Audience",
+        overview:
+          "This project involves demonstrating your ability to handle a challenging audience effectively.",
+        objective:
+          "Deliver a speech or presentation that showcases your strategies for managing difficult audience situations, including handling interruptions, objections, or disengagement.",
+        greenCard: "12:00",
+        yellowCard: "13:30",
+        redCard: "15:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Write a Compelling Blog",
+        overview:
+          "This project focuses on writing and presenting a compelling blog post, demonstrating your ability to communicate effectively through written content.",
+        objective:
+          "Deliver a presentation based on a compelling blog post you have written, highlighting your ability to engage readers and convey your message clearly.",
+        greenCard: "2:00",
+        yellowCard: "2:30",
+        redCard: "3:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Manage Online Meetings",
+        overview:
+          "This project involves effectively managing and conducting online meetings, demonstrating your skills in virtual communication and facilitation.",
+        objective:
+          "Deliver a presentation on how you manage online meetings, including strategies for engaging participants, handling technical issues, and ensuring productive outcomes.",
+        greenCard: "20:00",
+        yellowCard: "22:30",
+        redCard: "25:00",
+      },
+      {
+        speechNumber: 8,
+        title: "Question-and-Answer Session",
+        overview:
+          "This project focuses on conducting an effective question-and-answer session, demonstrating your ability to handle inquiries and engage with your audience.",
+        objective:
+          "Deliver a presentation that includes a Q&A session, showcasing your skills in responding to audience questions, managing discussions, and maintaining control of the session.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 9,
+        title: "Public Relations Strategies",
+        overview:
+          "This project involves presenting strategies for effective public relations, including how to manage your organization's image and communication.",
+        objective:
+          "Deliver a presentation on your public relations strategies, including how you handle media relations, manage crises, and build positive relationships with stakeholders.",
         greenCard: "5:00",
         yellowCard: "6:00",
         redCard: "7:00",
@@ -2571,25 +3863,91 @@ export const pathways: Pathway[] = [
     level5: [
       {
         speechNumber: 1,
-        title: "Innovative Planning",
+        title: "High Performance Leadership - 1",
         overview:
-          "Learn how to innovate and plan effectively for future success.",
+          "This project involves demonstrating your ability to lead a high-performance team and drive significant results.",
         objective:
-          "Deliver a speech that showcases innovative planning and strategic thinking.",
+          "Deliver a presentation on your leadership experience with a high-performance team, focusing on your strategies for achieving exceptional results and overcoming challenges.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 2,
+        title: "High Performance Leadership - 2",
+        overview:
+          "This project continues the focus on high-performance leadership, with an emphasis on long-term impact and sustainability.",
+        objective:
+          "Deliver a presentation on how you sustained high performance over time, including strategies for maintaining motivation, managing change, and ensuring ongoing success.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 3,
+        title: "Lessons Learned",
+        overview:
+          "This project involves reflecting on your experiences and lessons learned throughout the Innovative Planning path.",
+        objective:
+          "Deliver a presentation that summarizes key lessons learned from your projects and experiences, including insights into what worked well and areas for improvement.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 4,
+        title: "Moderate a Panel Discussion",
+        overview:
+          "This project involves moderating a panel discussion, demonstrating your skills in facilitating complex conversations and engaging with multiple speakers.",
+        objective:
+          "Moderate a panel discussion, including preparing questions, managing the discussion flow, and engaging with both the panelists and the audience effectively.",
+        greenCard: "20:00",
+        yellowCard: "25:00",
+        redCard: "30:00",
+      },
+      {
+        speechNumber: 5,
+        title: "Ethical Leadership",
+        overview:
+          "This project focuses on demonstrating your understanding and application of ethical leadership principles.",
+        objective:
+          "Deliver a presentation on your approach to ethical leadership, including how you make decisions, manage conflicts, and uphold ethical standards in your leadership role.",
+        greenCard: "20:00",
+        yellowCard: "25:00",
+        redCard: "30:00",
+      },
+      {
+        speechNumber: 6,
+        title: "Leading in Your Volunteer Organization",
+        overview:
+          "This project involves applying your leadership skills in a volunteer organization, showcasing your ability to lead and make an impact in a non-profit or volunteer setting.",
+        objective:
+          "Deliver a presentation on your leadership experience within a volunteer organization, focusing on your strategies for motivating volunteers, managing projects, and achieving organizational goals.",
+        greenCard: "5:00",
+        yellowCard: "6:00",
+        redCard: "7:00",
+      },
+      {
+        speechNumber: 7,
+        title: "Prepare to Speak Professionally",
+        overview:
+          "This project focuses on preparing and delivering a professional speech or presentation, demonstrating your ability to communicate effectively in a formal setting.",
+        objective:
+          "Deliver a professional speech or presentation on a topic of your choice, showcasing your ability to engage the audience, present your ideas clearly, and handle questions or feedback.",
         greenCard: "18:00",
         yellowCard: "20:00",
         redCard: "22:00",
       },
       {
-        speechNumber: 2,
+        speechNumber: 8,
         title: "Reflect on Your Path",
         overview:
-          "Review the path you have completed and the skills you have developed.",
+          "This project involves reflecting on your journey through the Innovative Planning path and identifying key accomplishments and growth areas.",
         objective:
-          "Deliver a speech reflecting on your Toastmasters journey and the progress you have made.",
+          "Deliver a presentation reflecting on your experiences throughout the Innovative Planning path, including your personal growth, achievements, and future goals.",
         greenCard: "10:00",
-        yellowCard: "12:00",
-        redCard: "14:00",
+        yellowCard: "11:00",
+        redCard: "12:00",
       },
     ],
   },
