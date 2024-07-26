@@ -5,6 +5,8 @@ export type User = {
   id: number;
   meetingHistory: any;
   photoConsent: boolean;
+  roleHistory: Map<string, number>;
+  speechHistory: Speech[];
 };
 
 export type Role = {
@@ -20,7 +22,7 @@ export type Agenda = {
   theme: string;
   speakers: number;
   speeches: Speech[];
-  startDateTime : Date;
+  startDateTime: Date;
   location: string;
 };
 
@@ -36,4 +38,9 @@ export type Speech = {
 
 export type Deployment = {
   url: string;
+};
+
+export type ChangePassword = {
+  oldPassword: string;
+  newPassword: string;
 };

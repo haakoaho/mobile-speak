@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { getBackendUrl, invalidateBackendUrl } from "../../util/getBackendUrl";
+import { getBackendUrl } from "../../util/getBackendUrl";
 import { CustomSession } from "./auth/typing";
 import { authOptions } from "./auth/authOptions";
 
@@ -27,7 +27,6 @@ export default async function GET(req: NextApiRequest, res: NextApiResponse) {
 
     if (!response.ok) {
       if(response.status === 504){
-        invalidateBackendUrl();
       }
       res.status(response.status).json({ message: response.statusText });
       return;
