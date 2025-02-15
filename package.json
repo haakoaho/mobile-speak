@@ -6,15 +6,14 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "@capacitor/android": "^6.1.1",
-    "@capacitor/cli": "^6.1.1",
-    "@capacitor/core": "^6.1.1",
+    "@capacitor/cli": "^7.0.1",
+    "@capacitor/core": "^7.0.0",
     "cookie": "^0.6.0",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "js-cookie": "^3.0.5",
-    "next": "latest",
-    "next-auth": "^4.24.7",
+    "next": "^15.1.7",
+    "next-auth": "^4.24.11",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -22,11 +21,12 @@
     "node": ">=18"
   },
   "devDependencies": {
+    "@capacitor/android": "^7.0.1",
     "@capacitor/assets": "^3.0.5",
     "@types/js-cookie": "^3.0.6",
-    "@types/node": "^20.14.2",
-    "@types/react": "^18.3.3",
-    "sass": "^1.77.5",
-    "typescript": "^5.4.5"
+    "@types/node": "^20.17.19",
+    "@types/react": "^18.3.18",
+    "sass": "^1.85.0",
+    "typescript": "^5.7.3"
   }
 }
